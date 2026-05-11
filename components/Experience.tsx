@@ -52,7 +52,7 @@ function RoleCard({ role }: { role: typeof roles[0] }) {
   return (
     <div ref={ref} data-visible={isVisible} className="scroll-reveal relative pl-8 pb-6 last:pb-0">
       <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full ring-4 animate-dot-pulse"
-        style={{ backgroundColor: '#6366f1', ringColor: 'rgba(129,140,248,0.2)' }} />
+        style={{ backgroundColor: '#6366f1', '--tw-ring-color': 'rgba(129,140,248,0.2)' } as React.CSSProperties} />
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-3">
         <div>
           <a
