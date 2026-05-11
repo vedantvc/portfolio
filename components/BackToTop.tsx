@@ -35,7 +35,7 @@ export default function BackToTop() {
     <a
       href="#hero"
       aria-label="Back to top"
-      className={`fixed bottom-6 right-4 z-50 flex h-11 w-11 items-center justify-center rounded-full border backdrop-blur-md transition-[opacity,transform,border-color,color] duration-300 hover:opacity-100 ${
+      className={`fixed bottom-6 right-1 z-50 flex h-11 w-11 items-center justify-center rounded-full border backdrop-blur-md transition-[opacity,transform,border-color,color] duration-300 hover:opacity-100 md:right-2 ${
         visible ? 'translate-y-0 opacity-50' : 'pointer-events-none translate-y-3 opacity-0'
       }`}
       style={{ backgroundColor: 'var(--c-nav-bg)', borderColor: 'var(--c-border)', color: 'var(--c-muted)' }}

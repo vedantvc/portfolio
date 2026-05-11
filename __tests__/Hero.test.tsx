@@ -12,7 +12,7 @@ describe('Hero', () => {
     render(<Hero />)
     const link = screen.getByText('Download Resume').closest('a')
     expect(link).toHaveAttribute('href', '/resume.pdf')
-    expect(link).toHaveAttribute('download')
+    expect(link).toHaveAttribute('download', 'Resume_Vedant_Chidgopkar.pdf')
   })
 
   it('renders email link', () => {
@@ -32,7 +32,7 @@ describe('Hero', () => {
 
   it('renders scroll anchor', () => {
     render(<Hero />)
-    const scrollLink = screen.getByText('↓ scroll').closest('a')
+    const scrollLink = screen.getByText('Scroll to explore').closest('a')
     expect(scrollLink).toHaveAttribute('href', '#about')
   })
 })

@@ -55,7 +55,7 @@ export default function Hero() {
         </p>
         <div className="hero-item flex flex-col items-start gap-2 min-[1440px]:items-center" style={{ animationDelay: '400ms' }}>
           <div className="flex flex-wrap items-center gap-3 min-[1440px]:justify-center">
-            <a href="/resume.pdf" download
+            <a href="/resume.pdf" download="Resume_Vedant_Chidgopkar.pdf"
               className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-4 sm:px-5 py-2.5 bg-[#6366f1] text-white font-bold hover:bg-[#818cf8] transition-colors rounded-md">
               <Icon name="download" className="h-4 w-4" />
               Download Resume
@@ -87,11 +87,15 @@ export default function Hero() {
             Email copied to clipboard
           </span>
         </div>
-        <a href="#about" className="hero-item mt-10 inline-block font-mono text-xs sm:text-sm transition-colors"
-          style={{ color: 'var(--c-muted)', animationDelay: '500ms' }}
+        <a
+          href="#about"
+          className="scroll-cue mt-10 inline-flex items-center gap-2 font-mono text-xs sm:text-sm transition-colors min-[1440px]:mx-auto"
+          style={{ color: 'var(--c-muted)' }}
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--c-accent)')}
-          onMouseLeave={e => (e.currentTarget.style.color = 'var(--c-muted)')}>
-          ↓ scroll
+          onMouseLeave={e => (e.currentTarget.style.color = 'var(--c-muted)')}
+        >
+          <span className="text-base leading-none">↓</span>
+          <span>Scroll to explore</span>
         </a>
       </div>
     </section>

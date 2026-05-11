@@ -121,6 +121,15 @@ html.dark .shooting-star::after {
 }
 .hero-item { opacity: 0; animation: hero-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
+.scroll-cue {
+  animation: scroll-cue-bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes scroll-cue-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
 /* Scroll reveal */
 .scroll-reveal {
   opacity: 0; transform: translateY(36px);
