@@ -37,18 +37,18 @@ export default function Hero() {
           style={{ color: 'var(--c-accent)', animationDelay: '0ms' }}>
           Hi, I&apos;m
         </p>
-        <h1 className="hero-item font-mono text-4xl sm:text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-none"
+        <h1 className="hero-item font-mono text-4xl sm:text-5xl md:text-7xl min-[1440px]:text-[5.35rem] font-bold mb-4 tracking-tight leading-none"
           style={{ color: 'var(--c-text)', animationDelay: '100ms' }}>
           <span className="block">VEDANT</span>
           <span className="block bg-gradient-to-r from-[#6366f1] via-[#818cf8] to-[#67e8f9] bg-clip-text text-transparent">
             CHIDGOPKAR
           </span>
         </h1>
-        <div className="hero-item font-mono text-lg md:text-2xl mb-6 h-8 flex items-center min-[1440px]:justify-center"
+        <div className="hero-item font-mono text-lg md:text-2xl min-[1440px]:text-[1.75rem] mb-6 h-8 min-[1440px]:h-10 flex items-center min-[1440px]:justify-center"
           style={{ color: 'var(--c-accent)', animationDelay: '200ms' }}>
           {displayed}<span className="animate-pulse ml-0.5" style={{ color: 'var(--c-accent-soft)' }}>|</span>
         </div>
-        <p className="hero-item text-sm sm:text-base md:text-lg max-w-2xl mb-10 leading-relaxed min-[1440px]:mx-auto"
+        <p className="hero-item text-sm sm:text-base md:text-lg max-w-2xl min-[1440px]:max-w-3xl mb-10 leading-relaxed min-[1440px]:mx-auto"
           style={{ color: 'var(--c-muted)', animationDelay: '300ms' }}>
           Production systems built for reliability: payment workflows, AI support agents,
           cloud infrastructure, and full-stack tools designed to hold up in the real world.
