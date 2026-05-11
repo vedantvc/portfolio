@@ -15,7 +15,8 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-16 py-12 px-6 md:px-16">
       <div className="max-w-7xl mx-auto">
-        <h2 ref={ref} data-visible={isVisible}
+        <div ref={ref} className="h-px w-px" aria-hidden="true" />
+        <h2 data-visible={isVisible}
           className="scroll-reveal font-mono text-3xl font-bold mb-5"
           style={{ color: 'var(--c-text)' }}>
           <Icon name="user" className="inline h-8 w-8 align-[-0.18em]" /> About Me
