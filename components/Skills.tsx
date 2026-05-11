@@ -45,20 +45,20 @@ function SkillCard({ group, delay }: { group: typeof skillGroups[0]; delay: numb
   return (
     <div
       ref={ref}
-      className={`bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-5 hover:border-[#00ff88]/40 hover:shadow-[0_0_20px_rgba(0,255,136,0.05)] transition-all duration-500 ${
+      className={`bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-5 hover:border-[#818cf8]/40 hover:shadow-[0_0_20px_rgba(99,102,241,0.08)] transition-all duration-500 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="flex items-center gap-2 mb-4">
-        <span className="font-mono text-[#00ff88] text-sm">{group.icon}</span>
+        <span className="font-mono text-[#818cf8] text-sm">{group.icon}</span>
         <h3 className="font-mono text-sm font-bold text-white">{group.label}</h3>
       </div>
       <div className="flex flex-wrap gap-2">
         {group.skills.map((skill) => (
           <span
             key={skill}
-            className="font-mono text-xs px-2 py-0.5 bg-[#0d1117]/60 border border-[#1e2235] text-[#8892a4] hover:text-[#00ff88] hover:border-[#00ff88]/30 transition-colors"
+            className="font-mono text-xs px-2 py-0.5 bg-[#0d1117]/60 border border-[#1e2235] text-[#8892a4] hover:text-[#a5b4fc] hover:border-[#818cf8]/30 transition-colors"
           >
             {skill}
           </span>
@@ -80,7 +80,7 @@ export default function Skills() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
-          <span className="text-[#00ff88]">./</span><span>skills</span>
+          <span className="text-[#818cf8]">./</span><span>skills</span>
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {skillGroups.map((group, i) => (

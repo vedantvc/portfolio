@@ -13,18 +13,20 @@ export default function Contact() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <p className="font-mono text-[#00ff88] text-sm tracking-widest mb-4">
-            $ echo &quot;hello&quot;
+          <p className="font-mono text-[#818cf8] text-sm tracking-widest mb-4 opacity-70">
+            vedant.chidgopkar · available
           </p>
           <h2 className="font-mono text-4xl md:text-5xl font-bold text-white mb-2 leading-tight">
             Let&apos;s build<br />
-            <span className="text-[#00ff88]">something.</span>
+            <span className="bg-gradient-to-r from-[#818cf8] to-[#67e8f9] bg-clip-text text-transparent">
+              something.
+            </span>
           </h2>
           <p className="text-[#8892a4] mb-10">San Jose, CA · Open to opportunities</p>
           <div className="flex flex-wrap gap-6 items-center">
             <a
               href="mailto:chidgopkarvedant02@gmail.com"
-              className="font-mono text-lg text-[#00ff88] hover:underline break-all"
+              className="font-mono text-lg text-[#818cf8] hover:text-[#a5b4fc] hover:underline break-all transition-colors"
             >
               chidgopkarvedant02@gmail.com
             </a>
@@ -33,7 +35,7 @@ export default function Contact() {
                 href="https://linkedin.com/in/vedant-chidgopkar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-sm text-[#8892a4] hover:text-[#00ff88] border border-[#1e2235] px-4 py-2 hover:border-[#00ff88]/30 transition-colors"
+                className="font-mono text-sm text-[#8892a4] hover:text-[#818cf8] border border-[#1e2235] px-4 py-2 hover:border-[#818cf8]/40 transition-colors"
               >
                 LinkedIn
               </a>
@@ -41,7 +43,7 @@ export default function Contact() {
                 href="https://github.com/vedantvc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-sm text-[#8892a4] hover:text-[#00ff88] border border-[#1e2235] px-4 py-2 hover:border-[#00ff88]/30 transition-colors"
+                className="font-mono text-sm text-[#8892a4] hover:text-[#818cf8] border border-[#1e2235] px-4 py-2 hover:border-[#818cf8]/40 transition-colors"
               >
                 GitHub
               </a>

@@ -50,9 +50,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }}
           />
           <div
-            className="absolute top-[50%] right-[20%] w-[350px] h-[350px] rounded-full blur-[100px]"
+            className="absolute top-[45%] right-[15%] w-[400px] h-[400px] rounded-full blur-[110px]"
             style={{
-              background: 'radial-gradient(circle, rgba(0,255,136,0.07) 0%, rgba(0,255,136,0) 70%)',
+              background: 'radial-gradient(circle, rgba(129,140,248,0.10) 0%, rgba(129,140,248,0) 70%)',
               animation: 'orb-drift-1 35s ease-in-out infinite reverse',
             }}
           />
