@@ -67,7 +67,7 @@ function RoleCard({ role, index }: { role: typeof roles[0]; index: number }) {
         isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${isLeft ? '-translate-x-8' : 'translate-x-8'}`
       } ${isLeft ? 'md:mr-auto' : 'md:ml-auto'}`}
     >
-      <div className="bg-[#111118] border border-[#1e1e2e] p-6 hover:border-[#00ff88]/30 transition-colors">
+      <div className="bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-6 hover:border-[#00ff88]/30 transition-colors">
         <div className="flex justify-between items-start mb-1">
           <h3 className="font-mono text-[#00ff88] font-bold">{role.company}</h3>
           <span className="font-mono text-xs text-[#8892a4]">{role.period}</span>
@@ -84,7 +84,7 @@ function RoleCard({ role, index }: { role: typeof roles[0]; index: number }) {
         </ul>
         <div className="flex flex-wrap gap-2">
           {role.tags.map((tag) => (
-            <span key={tag} className="font-mono text-xs px-2 py-0.5 border border-[#1e1e2e] text-[#8892a4]">{tag}</span>
+            <span key={tag} className="font-mono text-xs px-2 py-0.5 border border-[#1e2235] text-[#8892a4]">{tag}</span>
           ))}
         </div>
       </div>

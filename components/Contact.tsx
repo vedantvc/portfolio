@@ -33,7 +33,7 @@ export default function Contact() {
                 href="https://linkedin.com/in/vedant-chidgopkar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-sm text-[#8892a4] hover:text-[#00ff88] border border-[#1e1e2e] px-4 py-2 hover:border-[#00ff88]/30 transition-colors"
+                className="font-mono text-sm text-[#8892a4] hover:text-[#00ff88] border border-[#1e2235] px-4 py-2 hover:border-[#00ff88]/30 transition-colors"
               >
                 LinkedIn
               </a>
@@ -41,14 +41,14 @@ export default function Contact() {
                 href="https://github.com/vedantvc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-sm text-[#8892a4] hover:text-[#00ff88] border border-[#1e1e2e] px-4 py-2 hover:border-[#00ff88]/30 transition-colors"
+                className="font-mono text-sm text-[#8892a4] hover:text-[#00ff88] border border-[#1e2235] px-4 py-2 hover:border-[#00ff88]/30 transition-colors"
               >
                 GitHub
               </a>
             </div>
           </div>
         </div>
-        <div className="mt-20 pt-8 border-t border-[#1e1e2e]">
+        <div className="mt-20 pt-8 border-t border-[#1e2235]">
           <p className="font-mono text-xs text-[#8892a4]">
             © 2026 Vedant Chidgopkar · Built with Next.js + TypeScript
           </p>

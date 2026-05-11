@@ -1,0 +1,281 @@
+
+> portfolio@0.1.0 test
+> jest --showConfig
+
+{
+  "configs": [
+    {
+      "automock": false,
+      "cache": true,
+      "cacheDirectory": "C:\\Users\\vedan\\AppData\\Local\\Temp\\jest",
+      "clearMocks": false,
+      "collectCoverage": false,
+      "collectCoverageFrom": [],
+      "coverageDirectory": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\coverage",
+      "coveragePathIgnorePatterns": [
+        "\\\\node_modules\\\\"
+      ],
+      "coverageProvider": "babel",
+      "coverageReporters": [
+        "json",
+        "text",
+        "lcov",
+        "clover"
+      ],
+      "cwd": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio",
+      "detectLeaks": false,
+      "detectOpenHandles": false,
+      "errorOnDeprecated": false,
+      "extensionsToTreatAsEsm": [],
+      "fakeTimers": {
+        "enableGlobally": false
+      },
+      "forceCoverageMatch": [],
+      "globals": {},
+      "haste": {
+        "computeSha1": false,
+        "enableSymlinks": false,
+        "forceNodeFilesystemAPI": true,
+        "throwOnModuleCollision": false
+      },
+      "id": "6e8d7f83daa49438ef87828b926f7d8e",
+      "injectGlobals": true,
+      "moduleDirectories": [
+        "node_modules"
+      ],
+      "moduleFileExtensions": [
+        "js",
+        "mjs",
+        "cjs",
+        "jsx",
+        "ts",
+        "mts",
+        "cts",
+        "tsx",
+        "json",
+        "node"
+      ],
+      "moduleNameMapper": [
+        [
+          "^.+\\.module\\.(css|sass|scss)$",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\next\\dist\\build\\jest\\object-proxy.js"
+        ],
+        [
+          "^.+\\.(css|sass|scss)$",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\next\\dist\\build\\jest\\__mocks__\\styleMock.js"
+        ],
+        [
+          "^.+\\.(png|jpg|jpeg|gif|webp|avif|ico|bmp)$",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\next\\dist\\build\\jest\\__mocks__\\fileMock.js"
+        ],
+        [
+          "^.+\\.(svg)$",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\next\\dist\\build\\jest\\__mocks__\\fileMock.js"
+        ],
+        [
+          "@next/font/(.*)",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\next\\dist\\build\\jest\\__mocks__\\nextFontMock.js"
+        ],
+        [
+          "next/font/(.*)",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\next\\dist\\build\\jest\\__mocks__\\nextFontMock.js"
+        ],
+        [
+          "^server-only$",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\next\\dist\\build\\jest\\__mocks__\\empty.js"
+        ],
+        [
+          "^@/(.*)$",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\$1"
+        ]
+      ],
+      "modulePathIgnorePatterns": [],
+      "openHandlesTimeout": 1000,
+      "prettierPath": "prettier",
+      "resetMocks": false,
+      "resetModules": false,
+      "restoreMocks": false,
+      "rootDir": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio",
+      "roots": [
+        "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio"
+      ],
+      "runner": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\jest-runner\\build\\index.js",
+      "runnerOptions": {},
+      "sandboxInjectedGlobals": [],
+      "setupFiles": [],
+      "setupFilesAfterEnv": [
+        "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\jest.setup.ts"
+      ],
+      "skipFilter": false,
+      "slowTestThreshold": 5,
+      "snapshotFormat": {
+        "escapeString": false,
+        "printBasicPrototype": false
+      },
+      "snapshotSerializers": [],
+      "testEnvironment": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\jest-environment-jsdom\\build\\index.js",
+      "testEnvironmentOptions": {},
+      "testLocationInResults": false,
+      "testMatch": [
+        "**/__tests__/**/*.?([mc])[jt]s?(x)",
+        "**/?(*.)+(spec|test).?([mc])[jt]s?(x)"
+      ],
+      "testPathIgnorePatterns": [
+        "\\\\node_modules\\\\",
+        "\\\\.next\\\\"
+      ],
+      "testRegex": [],
+      "testRunner": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\jest-circus\\build\\runner.js",
+      "transform": [
+        [
+          "^.+\\.(js|jsx|ts|tsx|mjs)$",
+          "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\next\\dist\\build\\swc\\jest-transformer.js",
+          {
+            "modularizeImports": {
+              "@mui/icons-material": {
+                "transform": "@mui/icons-material/{{member}}"
+              },
+              "lodash": {
+                "transform": "lodash/{{member}}"
+              }
+            },
+            "compilerOptions": {},
+            "jsConfig": {
+              "compilerOptions": {
+                "target": 4,
+                "lib": [
+                  "lib.dom.d.ts",
+                  "lib.dom.iterable.d.ts",
+                  "lib.esnext.d.ts"
+                ],
+                "allowJs": true,
+                "skipLibCheck": true,
+                "strict": true,
+                "noEmit": true,
+                "esModuleInterop": true,
+                "module": 99,
+                "moduleResolution": 100,
+                "resolveJsonModule": true,
+                "isolatedModules": true,
+                "jsx": 4,
+                "incremental": true,
+                "plugins": [
+                  {
+                    "name": "next"
+                  }
+                ],
+                "paths": {
+                  "@/*": [
+                    "./*"
+                  ]
+                },
+                "pathsBasePath": "C:/Users/vedan/OneDrive/Desktop/Claude Practice/portfolio"
+              }
+            },
+            "resolvedBaseUrl": {
+              "baseUrl": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio",
+              "isImplicit": true
+            },
+            "serverComponents": true,
+            "isEsmProject": false,
+            "imageConfig": {
+              "deviceSizes": [
+                640,
+                750,
+                828,
+                1080,
+                1200,
+                1920,
+                2048,
+                3840
+              ],
+              "imageSizes": [
+                32,
+                48,
+                64,
+                96,
+                128,
+                256,
+                384
+              ],
+              "qualities": [
+                75
+              ],
+              "path": "/_next/image",
+              "loader": "default",
+              "dangerouslyAllowSVG": false,
+              "unoptimized": false
+            }
+          }
+        ]
+      ],
+      "transformIgnorePatterns": [
+        "\\\\node_modules\\\\(?!.pnpm)(?!(geist|next\\\\dist\\\\client|next\\\\dist\\\\shared\\\\lib|next\\\\src\\\\client|next\\\\src\\\\shared\\\\lib)\\\\)",
+        "\\\\node_modules[\\\\\\\\]\\.pnpm[\\\\\\\\](?!(geist|next\\+dist\\+client|next\\+dist\\+shared\\+lib|next\\+src\\+client|next\\+src\\+shared\\+lib)@)(?!.*node_modules[\\\\\\\\](geist|next[\\\\\\\\]dist[\\\\\\\\]client|next[\\\\\\\\]dist[\\\\\\\\]shared[\\\\\\\\]lib|next[\\\\\\\\]src[\\\\\\\\]client|next[\\\\\\\\]src[\\\\\\\\]shared[\\\\\\\\]lib)[\\\\\\\\])",
+        "^.+\\.module\\.(css|sass|scss)$"
+      ],
+      "waitForUnhandledRejections": false,
+      "watchPathIgnorePatterns": [
+        "\\\\.next\\\\"
+      ]
+    }
+  ],
+  "globalConfig": {
+    "bail": 0,
+    "changedFilesWithAncestor": false,
+    "ci": false,
+    "collectCoverage": false,
+    "collectCoverageFrom": [],
+    "collectTests": false,
+    "coverageDirectory": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\coverage",
+    "coverageProvider": "babel",
+    "coverageReporters": [
+      "json",
+      "text",
+      "lcov",
+      "clover"
+    ],
+    "detectLeaks": false,
+    "detectOpenHandles": false,
+    "errorOnDeprecated": false,
+    "expand": false,
+    "findRelatedTests": false,
+    "forceExit": false,
+    "json": false,
+    "lastCommit": false,
+    "listTests": false,
+    "logHeapUsage": false,
+    "maxConcurrency": 5,
+    "maxWorkers": 15,
+    "noStackTrace": false,
+    "nonFlagArgs": [],
+    "notify": false,
+    "notifyMode": "failure-change",
+    "onlyChanged": false,
+    "onlyFailures": false,
+    "openHandlesTimeout": 1000,
+    "passWithNoTests": false,
+    "projects": [],
+    "rootDir": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio",
+    "runInBand": false,
+    "runTestsByPath": false,
+    "seed": -383931155,
+    "skipFilter": false,
+    "snapshotFormat": {
+      "escapeString": false,
+      "printBasicPrototype": false
+    },
+    "testFailureExitCode": 1,
+    "testPathPatterns": [],
+    "testSequencer": "C:\\Users\\vedan\\OneDrive\\Desktop\\Claude Practice\\portfolio\\node_modules\\@jest\\test-sequencer\\build\\index.js",
+    "updateSnapshot": "new",
+    "useStderr": false,
+    "waitForUnhandledRejections": false,
+    "watch": false,
+    "watchAll": false,
+    "watchman": true,
+    "workerGracefulExitTimeout": 500,
+    "workerThreads": false
+  },
+  "version": "30.4.1"
+}

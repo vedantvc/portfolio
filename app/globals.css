@@ -3,12 +3,14 @@
 
 @theme {
   --color-accent: #00ff88;
-  --color-surface: #111118;
-  --color-border-dim: #1e1e2e;
+  --color-surface: #131720;
+  --color-border-dim: #1e2235;
   --color-muted: #8892a4;
-  --color-bg: #0a0a0f;
+  --color-bg: #0d1117;
   --font-family-mono: var(--font-mono), ui-monospace, monospace;
   --font-family-sans: var(--font-sans), ui-sans-serif, sans-serif;
+  --animate-orb-1: orb-drift-1 22s ease-in-out infinite;
+  --animate-orb-2: orb-drift-2 28s ease-in-out infinite;
 }
 
 html {
@@ -31,4 +33,16 @@ html {
     rgba(0, 0, 0, 0.3) 2px,
     rgba(0, 0, 0, 0.3) 4px
   );
+}
+
+@keyframes orb-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-70px, 50px) scale(1.06); }
+  66%       { transform: translate(50px, -40px) scale(0.94); }
+}
+
+@keyframes orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(60px, -55px) scale(1.08); }
+  66%       { transform: translate(-50px, 40px) scale(0.96); }
 }

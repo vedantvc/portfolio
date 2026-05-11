@@ -45,7 +45,7 @@ function SkillCard({ group, delay }: { group: typeof skillGroups[0]; delay: numb
   return (
     <div
       ref={ref}
-      className={`bg-[#111118] border border-[#1e1e2e] p-5 hover:border-[#00ff88]/40 hover:shadow-[0_0_20px_rgba(0,255,136,0.05)] transition-all duration-500 ${
+      className={`bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-5 hover:border-[#00ff88]/40 hover:shadow-[0_0_20px_rgba(0,255,136,0.05)] transition-all duration-500 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
       style={{ transitionDelay: `${delay}ms` }}
@@ -58,7 +58,7 @@ function SkillCard({ group, delay }: { group: typeof skillGroups[0]; delay: numb
         {group.skills.map((skill) => (
           <span
             key={skill}
-            className="font-mono text-xs px-2 py-0.5 bg-[#0a0a0f] border border-[#1e1e2e] text-[#8892a4] hover:text-[#00ff88] hover:border-[#00ff88]/30 transition-colors"
+            className="font-mono text-xs px-2 py-0.5 bg-[#0d1117]/60 border border-[#1e2235] text-[#8892a4] hover:text-[#00ff88] hover:border-[#00ff88]/30 transition-colors"
           >
             {skill}
           </span>
@@ -72,7 +72,7 @@ export default function Skills() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="skills" className="py-24 px-6 md:px-16 bg-[#0d0d12]">
+    <section id="skills" className="py-24 px-6 md:px-16 bg-[#0d1117]/50">
       <div className="max-w-6xl mx-auto">
         <h2
           ref={ref}
