@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#090d16"/>
+  <text
+    x="50%"
+    y="52%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-family="JetBrains Mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+    font-size="20"
+    font-weight="800"
+    fill="#818cf8"
+    letter-spacing="1"
+  >VC</text>
+</svg>

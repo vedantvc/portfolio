@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     description: 'Software Engineer with 4+ years in fintech and AI engineering. Currently at PayPal.',
     type: 'website', locale: 'en_US',
   },
+  icons: {
+    icon: '/icon.svg',
+  },
   robots: { index: true, follow: true },
 }
 
