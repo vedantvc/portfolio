@@ -18,7 +18,7 @@ const STARS = [
 
 export default function Background() {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 opacity-0 dark:opacity-100 transition-opacity duration-500" aria-hidden="true">
 
       {/* Floating orbs */}
       <div className="absolute rounded-full blur-[140px]"

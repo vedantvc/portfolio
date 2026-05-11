@@ -27,19 +27,19 @@ export default function Hero() {
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center px-6 md:px-16 pt-14 relative overflow-hidden">
       <div className="max-w-4xl relative z-10">
-        <p className="hero-item font-mono text-[#818cf8] text-sm tracking-widest mb-4 opacity-70" style={{ animationDelay: '0ms' }}>
+        <p className="hero-item font-mono text-[#6366f1] dark:text-[#818cf8] text-sm tracking-widest mb-4 opacity-70" style={{ animationDelay: '0ms' }}>
           vedant.chidgopkar
         </p>
-        <h1 className="hero-item font-mono text-5xl md:text-7xl font-bold text-white mb-4 tracking-tight leading-none" style={{ animationDelay: '100ms' }}>
+        <h1 className="hero-item font-mono text-5xl md:text-7xl font-bold text-[#1a1d2e] dark:text-white mb-4 tracking-tight leading-none" style={{ animationDelay: '100ms' }}>
           <span className="block">VEDANT</span>
-          <span className="block bg-gradient-to-r from-[#818cf8] via-[#a5b4fc] to-[#67e8f9] bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-[#6366f1] via-[#818cf8] to-[#67e8f9] bg-clip-text text-transparent">
             CHIDGOPKAR
           </span>
         </h1>
-        <div className="hero-item font-mono text-xl md:text-2xl text-[#818cf8] mb-6 h-8 flex items-center" style={{ animationDelay: '200ms' }}>
-          {displayed}<span className="animate-pulse ml-0.5 text-[#a5b4fc]">▊</span>
+        <div className="hero-item font-mono text-xl md:text-2xl text-[#6366f1] dark:text-[#818cf8] mb-6 h-8 flex items-center" style={{ animationDelay: '200ms' }}>
+          {displayed}<span className="animate-pulse ml-0.5 text-[#818cf8] dark:text-[#a5b4fc]">▊</span>
         </div>
-        <p className="hero-item text-[#8892a4] text-lg max-w-2xl mb-10 leading-relaxed" style={{ animationDelay: '300ms' }}>
+        <p className="hero-item text-[#5a6280] dark:text-[#8892a4] text-lg max-w-2xl mb-10 leading-relaxed" style={{ animationDelay: '300ms' }}>
           4+ years building scalable systems across fintech and enterprise platforms —
           from distributed payment microservices to production AI agents.
         </p>
@@ -52,12 +52,12 @@ export default function Hero() {
             Download Resume
           </a>
           <div className="flex gap-5">
-            <a href="mailto:chidgopkarvedant02@gmail.com" className="font-mono text-sm text-[#8892a4] hover:text-[#818cf8] transition-colors">Email</a>
-            <a href="https://linkedin.com/in/vedant-chidgopkar" target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-[#8892a4] hover:text-[#818cf8] transition-colors">LinkedIn</a>
-            <a href="https://github.com/vedantvc" target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-[#8892a4] hover:text-[#818cf8] transition-colors">GitHub</a>
+            <a href="mailto:chidgopkarvedant02@gmail.com" className="font-mono text-sm text-[#5a6280] dark:text-[#8892a4] hover:text-[#6366f1] dark:hover:text-[#818cf8] transition-colors">Email</a>
+            <a href="https://linkedin.com/in/vedant-chidgopkar" target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-[#5a6280] dark:text-[#8892a4] hover:text-[#6366f1] dark:hover:text-[#818cf8] transition-colors">LinkedIn</a>
+            <a href="https://github.com/vedantvc" target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-[#5a6280] dark:text-[#8892a4] hover:text-[#6366f1] dark:hover:text-[#818cf8] transition-colors">GitHub</a>
           </div>
         </div>
-        <a href="#experience" className="hero-item mt-10 inline-block font-mono text-[#8892a4] text-sm hover:text-[#818cf8] transition-colors" style={{ animationDelay: '500ms' }}>
+        <a href="#experience" className="hero-item mt-10 inline-block font-mono text-[#5a6280] dark:text-[#8892a4] text-sm hover:text-[#6366f1] dark:hover:text-[#818cf8] transition-colors" style={{ animationDelay: '500ms' }}>
           ↓ scroll
         </a>
       </div>

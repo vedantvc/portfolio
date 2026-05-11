@@ -76,10 +76,10 @@ function SkillBar({
   return (
     <div className="mb-3 last:mb-0">
       <div className="flex justify-between items-center mb-1">
-        <span className="font-mono text-xs text-[#c7cfe0]">{name}</span>
-        <span className="font-mono text-xs text-[#818cf8] tabular-nums">{level}%</span>
+        <span className="font-mono text-xs text-[#4a5268] dark:text-[#c7cfe0]">{name}</span>
+        <span className="font-mono text-xs text-[#6366f1] dark:text-[#818cf8] tabular-nums">{level}%</span>
       </div>
-      <div className="h-[5px] bg-[#1e2235] rounded-full overflow-hidden">
+      <div className="h-[5px] bg-[#d4d8f0] dark:bg-[#1e2235] rounded-full overflow-hidden">
         <div
           className="skill-bar-fill h-full rounded-full bg-gradient-to-r from-[#6366f1] via-[#818cf8] to-[#a5b4fc]"
           data-visible={visible}
@@ -97,9 +97,9 @@ function SkillGroup({ group }: { group: typeof skillGroups[0] }) {
     <div
       ref={ref}
       data-visible={isVisible}
-      className="scroll-reveal bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-4 hover:border-[#818cf8]/25 transition-colors duration-300"
+      className="scroll-reveal bg-white/80 dark:bg-[#131720]/80 backdrop-blur-sm border border-[#d4d8f0] dark:border-[#1e2235] p-4 hover:border-[#6366f1]/30 dark:hover:border-[#818cf8]/25 transition-colors duration-300"
     >
-      <p className="font-mono text-[10px] font-bold text-[#818cf8] uppercase tracking-[0.12em] mb-4">
+      <p className="font-mono text-[10px] font-bold text-[#6366f1] dark:text-[#818cf8] uppercase tracking-[0.12em] mb-4">
         {group.label}
       </p>
       {group.skills.map((s, i) => (
@@ -119,14 +119,14 @@ export default function Skills() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="skills" className="py-12 px-6 md:px-16 bg-[#0d1117]/40">
+    <section id="skills" className="py-12 px-6 md:px-16 bg-[#e8ecf8]/40 dark:bg-[#0d1117]/40">
       <div className="max-w-5xl mx-auto">
         <h2
           ref={ref}
           data-visible={isVisible}
-          className="scroll-reveal font-mono text-3xl font-bold text-white mb-8"
+          className="scroll-reveal font-mono text-3xl font-bold text-[#1a1d2e] dark:text-white mb-8"
         >
-          <span className="text-[#818cf8]">./</span>skills
+          <span className="text-[#6366f1] dark:text-[#818cf8]">./</span>skills
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {skillGroups.map((g) => (

@@ -1,6 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
 import { JetBrains_Mono, Inter } from 'next/font/google'
+import ThemeProvider from '@/components/ThemeProvider'
 import Background from '@/components/Background'
 import './globals.css'
 
@@ -9,7 +10,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swa
 
 export const metadata: Metadata = {
   title: 'Vedant Chidgopkar — Software Engineer',
-  description: 'Software Engineer with 4+ years building scalable systems across fintech and enterprise platforms — distributed payment microservices to production AI agents.',
+  description: 'Software Engineer with 4+ years building scalable systems across fintech and enterprise platforms.',
   openGraph: {
     title: 'Vedant Chidgopkar — Software Engineer',
     description: 'Software Engineer with 4+ years in fintech and AI engineering. Currently at PayPal.',
@@ -20,10 +21,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${jetbrainsMono.variable} ${inter.variable}`}>
-      <body className="bg-[#0d1117] text-white antialiased" suppressHydrationWarning>
-        <Background />
-        <div className="relative z-10">{children}</div>
+    <html lang="en" className={`${jetbrainsMono.variable} ${inter.variable}`} suppressHydrationWarning>
+      <body
+        className="bg-[#f0f2ff] dark:bg-[#0d1117] text-[#1a1d2e] dark:text-white antialiased transition-colors duration-300"
+        suppressHydrationWarning
+      >
+        <ThemeProvider>
+          <Background />
+          <div className="relative z-10">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   )

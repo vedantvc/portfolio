@@ -71,21 +71,21 @@ function RoleCard({ role }: { role: typeof roles[0] }) {
       {/* Header row */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
         <div>
-          <h3 className="font-mono text-lg font-bold text-white">{role.company}</h3>
-          <p className="font-mono text-sm text-[#818cf8]">{role.title}</p>
+          <h3 className="font-mono text-lg font-bold text-[#1a1d2e] dark:text-white">{role.company}</h3>
+          <p className="font-mono text-sm text-[#6366f1] dark:text-[#818cf8]">{role.title}</p>
         </div>
         <div className="text-right shrink-0">
-          <p className="font-mono text-xs text-[#8892a4]">{role.period}</p>
-          <p className="font-mono text-xs text-[#8892a4]">{role.location}</p>
+          <p className="font-mono text-xs text-[#5a6280] dark:text-[#8892a4]">{role.period}</p>
+          <p className="font-mono text-xs text-[#5a6280] dark:text-[#8892a4]">{role.location}</p>
         </div>
       </div>
 
       {/* Card body */}
-      <div className="bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-5 hover:border-[#6366f1]/40 transition-colors">
+      <div className="bg-white/80 dark:bg-[#131720]/80 backdrop-blur-sm border border-[#d4d8f0] dark:border-[#1e2235] p-5 hover:border-[#6366f1]/40 transition-colors">
         <ul className="space-y-2 mb-4">
           {role.bullets.map((bullet, i) => (
-            <li key={i} className="text-sm text-[#8892a4] leading-relaxed flex gap-2">
-              <span className="text-[#818cf8] mt-1 shrink-0">›</span>
+            <li key={i} className="text-sm text-[#5a6280] dark:text-[#8892a4] leading-relaxed flex gap-2">
+              <span className="text-[#6366f1] dark:text-[#818cf8] mt-1 shrink-0">›</span>
               {bullet}
             </li>
           ))}
@@ -94,7 +94,7 @@ function RoleCard({ role }: { role: typeof roles[0] }) {
           {role.tags.map((tag) => (
             <span
               key={tag}
-              className="font-mono text-xs px-2 py-0.5 border border-[#1e2235] text-[#8892a4] hover:border-[#818cf8]/40 hover:text-[#a5b4fc] transition-colors"
+              className="font-mono text-xs px-2 py-0.5 border border-[#d4d8f0] dark:border-[#1e2235] text-[#5a6280] dark:text-[#8892a4] hover:border-[#6366f1]/40 hover:text-[#6366f1] dark:hover:text-[#a5b4fc] transition-colors"
             >
               {tag}
             </span>
@@ -114,9 +114,9 @@ export default function Experience() {
         <h2
           ref={ref}
           data-visible={isVisible}
-          className="scroll-reveal font-mono text-3xl font-bold text-white mb-10"
+          className="scroll-reveal font-mono text-3xl font-bold text-[#1a1d2e] dark:text-white mb-10"
         >
-          <span className="text-[#818cf8]">./</span>experience
+          <span className="text-[#6366f1] dark:text-[#818cf8]">./</span>experience
         </h2>
 
         {/* Timeline container */}
