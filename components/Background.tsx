@@ -1,19 +1,13 @@
 'use client'
 
-// Deterministic star data - no Math.random() to avoid hydration mismatch
+// Deterministic star paths - every streak starts and ends outside the viewport.
 const STARS = [
-  { top: '8%',  left: '10%', dur: '3.5s', delay: '0s',   len: 100 },
-  { top: '15%', left: '55%', dur: '4.2s', delay: '1.2s', len: 80  },
-  { top: '5%',  left: '80%', dur: '3.8s', delay: '2.5s', len: 120 },
-  { top: '25%', left: '30%', dur: '5.0s', delay: '0.7s', len: 90  },
-  { top: '35%', left: '70%', dur: '3.2s', delay: '3.1s', len: 70  },
-  { top: '50%', left: '5%',  dur: '4.6s', delay: '1.8s', len: 110 },
-  { top: '60%', left: '45%', dur: '3.9s', delay: '4.0s', len: 85  },
-  { top: '12%', left: '92%', dur: '4.4s', delay: '0.4s', len: 95  },
-  { top: '70%', left: '20%', dur: '3.6s', delay: '2.2s', len: 75  },
-  { top: '45%', left: '85%', dur: '5.2s', delay: '3.6s', len: 105 },
-  { top: '80%', left: '60%', dur: '4.1s', delay: '1.0s', len: 88  },
-  { top: '20%', left: '42%', dur: '3.3s', delay: '4.8s', len: 115 },
+  { startX: '112vw', startY: '-12vh', endX: '-26vw', endY: '68vh', dur: '10s', delay: '0s', len: 86 },
+  { startX: '126vw', startY: '6vh', endX: '-18vw', endY: '88vh', dur: '12s', delay: '3.8s', len: 72 },
+  { startX: '108vw', startY: '28vh', endX: '-30vw', endY: '104vh', dur: '11s', delay: '7.5s', len: 80 },
+  { startX: '118vw', startY: '-4vh', endX: '-20vw', endY: '76vh', dur: '13s', delay: '11.2s', len: 68 },
+  { startX: '132vw', startY: '44vh', endX: '-24vw', endY: '118vh', dur: '12.5s', delay: '15s', len: 76 },
+  { startX: '122vw', startY: '16vh', endX: '-28vw', endY: '96vh', dur: '14s', delay: '19s', len: 84 },
 ]
 
 export default function Background() {
@@ -34,17 +28,19 @@ export default function Background() {
           background: 'radial-gradient(circle, rgba(124,58,237,0.16) 0%, transparent 65%)',
           animation: 'orb-drift-3 34s ease-in-out infinite' }} />
 
-      {/* Shooting stars */}
-      {STARS.map((s, i) => (
+      {/* Soft shooting stars */}
+      {STARS.map((star, i) => (
         <div
           key={i}
           className="shooting-star"
           style={{
-            top: s.top,
-            left: s.left,
-            '--dur': s.dur,
-            '--delay': s.delay,
-            '--len': `${s.len}px`,
+            '--start-x': star.startX,
+            '--start-y': star.startY,
+            '--end-x': star.endX,
+            '--end-y': star.endY,
+            '--dur': star.dur,
+            '--delay': star.delay,
+            '--len': `${star.len}px`,
           } as React.CSSProperties}
         />
       ))}

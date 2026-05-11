@@ -4,7 +4,7 @@ import Skills from '@/components/Skills'
 describe('Skills', () => {
   it('renders section heading', () => {
     render(<Skills />)
-    expect(screen.getByText(/Technical Skills/)).toBeInTheDocument()
+    expect(screen.getByText(/Engineering Toolkit/)).toBeInTheDocument()
   })
 
   it('renders all 6 skill group labels', () => {

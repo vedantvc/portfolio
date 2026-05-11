@@ -82,10 +82,16 @@ function RoleCard({ role }: { role: typeof roles[0] }) {
           </p>
         </div>
       </div>
-      <div className="rounded-lg backdrop-blur-sm border p-5 transition-colors duration-200"
+      <div className="rounded-lg backdrop-blur-sm border p-5 transition-[border-color,box-shadow] duration-300"
         style={{ backgroundColor: 'var(--c-surface)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}
-        onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)')}
-        onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--c-border)')}>
+        onMouseEnter={e => {
+          e.currentTarget.style.borderColor = 'rgba(99,102,241,0.45)'
+          e.currentTarget.style.boxShadow = '0 18px 38px rgba(99,102,241,0.09)'
+        }}
+        onMouseLeave={e => {
+          e.currentTarget.style.borderColor = 'var(--c-border)'
+          e.currentTarget.style.boxShadow = 'var(--c-card-shadow)'
+        }}>
         <ul className="space-y-2 mb-4">
           {role.bullets.map((b, i) => (
             <li key={i} className="text-sm leading-relaxed flex gap-2" style={{ color: 'var(--c-muted)' }}>

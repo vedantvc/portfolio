@@ -1,9 +1,19 @@
 'use client'
+import { useState } from 'react'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import Icon from '@/components/Icon'
 
+const email = 'chidgopkarvedant02@gmail.com'
+
 export default function Contact() {
   const { ref, isVisible } = useIntersectionObserver()
+  const [copiedEmail, setCopiedEmail] = useState(false)
+
+  const copyEmail = () => {
+    navigator.clipboard?.writeText(email).catch(() => undefined)
+    setCopiedEmail(true)
+    window.setTimeout(() => setCopiedEmail(false), 1800)
+  }
 
   return (
     <section id="contact" className="scroll-mt-16 py-12 px-6 md:px-16">
@@ -22,26 +32,53 @@ export default function Contact() {
 
           <div className="grid gap-3 mb-8 sm:grid-cols-3">
             {[
-              { value: 'chidgopkarvedant02@gmail.com', href: 'mailto:chidgopkarvedant02@gmail.com', icon: 'mail' as const, aria: 'Email Vedant' },
+              { value: email, href: `mailto:${email}`, icon: 'mail' as const, aria: 'Email Vedant', copy: true },
               { value: '+1 475 287 9053', href: 'tel:+14752879053', icon: 'phone' as const, aria: 'Call Vedant' },
               { value: 'San Jose, CA', href: 'https://www.google.com/maps/place/San+Jose,+CA', icon: 'pin' as const, aria: 'View San Jose location' },
             ].map((item) => (
               <a key={item.value} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 aria-label={item.aria}
-                className="flex min-w-0 items-start gap-3 rounded-lg border p-4 transition-colors"
-                style={{ color: 'var(--c-muted)', borderColor: 'var(--c-border)' }}
-                onMouseEnter={e => { e.currentTarget.style.color = 'var(--c-accent)'; e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)' }}
-                onMouseLeave={e => { e.currentTarget.style.color = 'var(--c-muted)'; e.currentTarget.style.borderColor = 'var(--c-border)' }}>
+                onClick={item.copy ? copyEmail : undefined}
+                className="flex min-w-0 items-start gap-3 rounded-lg border p-4 backdrop-blur-sm transition-[border-color,box-shadow,color] duration-300"
+                style={{ color: 'var(--c-muted)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = 'var(--c-accent)'
+                  e.currentTarget.style.borderColor = 'rgba(99,102,241,0.45)'
+                  e.currentTarget.style.boxShadow = '0 18px 38px rgba(99,102,241,0.09)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = 'var(--c-muted)'
+                  e.currentTarget.style.borderColor = 'var(--c-border)'
+                  e.currentTarget.style.boxShadow = 'var(--c-card-shadow)'
+                }}>
                 <Icon name={item.icon} className="mt-0.5 h-4 w-4 shrink-0" />
                 <span className="min-w-0 break-words text-sm">{item.value}</span>
               </a>
             ))}
           </div>
+          <p
+            aria-live="polite"
+            className={`-mt-5 mb-8 font-mono text-xs transition-opacity duration-200 ${copiedEmail ? 'opacity-100' : 'opacity-0'}`}
+            style={{ color: 'var(--c-accent)' }}
+          >
+            Email copied to clipboard
+          </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <a href="https://calendly.com/vedant-chidgopkar/30min" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-md font-mono text-sm px-6 py-3 bg-[#6366f1] text-white font-bold hover:bg-[#818cf8] transition-colors text-center">
+              className="inline-flex items-center justify-center gap-2 rounded-md border font-mono text-sm px-6 py-3 bg-[#6366f1] text-white font-bold transition-[background-color,border-color,box-shadow] duration-300 text-center"
+              style={{ borderColor: 'rgba(99,102,241,0.45)', boxShadow: 'var(--c-card-shadow)' }}
+              onMouseEnter={e => {
+                e.currentTarget.style.backgroundColor = '#818cf8'
+                e.currentTarget.style.borderColor = 'rgba(129,140,248,0.72)'
+                e.currentTarget.style.boxShadow = '0 18px 38px rgba(99,102,241,0.09)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.backgroundColor = '#6366f1'
+                e.currentTarget.style.borderColor = 'rgba(99,102,241,0.45)'
+                e.currentTarget.style.boxShadow = 'var(--c-card-shadow)'
+              }}>
               Schedule a Meeting
               <span aria-hidden="true">→</span>
             </a>

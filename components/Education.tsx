@@ -35,7 +35,7 @@ function DegreeCard({ deg, delay }: { deg: typeof degrees[0]; delay: number }) {
       }}
       onMouseEnter={e => {
         e.currentTarget.style.borderColor = 'rgba(99,102,241,0.45)'
-        e.currentTarget.style.boxShadow = '0 24px 54px rgba(99,102,241,0.14)'
+        e.currentTarget.style.boxShadow = '0 18px 38px rgba(99,102,241,0.09)'
       }}
       onMouseLeave={e => {
         e.currentTarget.style.borderColor = 'var(--c-border)'

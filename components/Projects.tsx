@@ -74,7 +74,7 @@ function ProjectCard({ project, delay }: { project: typeof projects[0]; delay: n
       }}
       onMouseEnter={e => {
         e.currentTarget.style.borderColor = 'rgba(99,102,241,0.5)'
-        e.currentTarget.style.boxShadow = '0 24px 54px rgba(99,102,241,0.14)'
+        e.currentTarget.style.boxShadow = '0 18px 38px rgba(99,102,241,0.09)'
       }}
       onMouseLeave={e => {
         e.currentTarget.style.borderColor = 'var(--c-border)'

@@ -132,7 +132,7 @@ export default function Skills() {
           className="scroll-reveal mb-4 font-mono text-3xl font-bold"
           style={{ color: 'var(--c-text)' }}
         >
-          <Icon name="code" className="inline h-8 w-8 align-[-0.18em]" /> Technical Skills
+          <Icon name="code" className="inline h-8 w-8 align-[-0.18em]" /> Engineering Toolkit
         </h2>
         <p
           data-visible={isVisible}
@@ -148,9 +148,17 @@ export default function Skills() {
           style={{ transitionDelay: '120ms' }}
         >
           <aside
-            className="min-w-0 max-w-full overflow-hidden rounded-lg border p-3 sm:p-4 lg:self-start"
+            className="min-w-0 max-w-full overflow-hidden rounded-lg border p-3 backdrop-blur-sm transition-[border-color,box-shadow] duration-300 sm:p-4 lg:self-start"
             style={{ backgroundColor: 'var(--c-surface)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}
             aria-label="Skill categories"
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = 'rgba(99,102,241,0.45)'
+              e.currentTarget.style.boxShadow = '0 18px 38px rgba(99,102,241,0.09)'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'var(--c-border)'
+              e.currentTarget.style.boxShadow = 'var(--c-card-shadow)'
+            }}
           >
             <div className="no-scrollbar flex w-full min-w-0 max-w-full gap-2 overflow-x-auto overscroll-x-contain lg:block lg:space-y-2 lg:overflow-visible">
               {skillGroups.map((group, index) => {
@@ -175,7 +183,18 @@ export default function Skills() {
             </div>
           </aside>
 
-          <div className="min-w-0 max-w-full overflow-hidden rounded-lg border p-4 md:p-6" style={{ backgroundColor: 'var(--c-surface)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}>
+          <div
+            className="min-w-0 max-w-full overflow-hidden rounded-lg border p-4 backdrop-blur-sm transition-[border-color,box-shadow] duration-300 md:p-6"
+            style={{ backgroundColor: 'var(--c-surface)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}
+            onMouseEnter={e => {
+              e.currentTarget.style.borderColor = 'rgba(99,102,241,0.45)'
+              e.currentTarget.style.boxShadow = '0 18px 38px rgba(99,102,241,0.09)'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.borderColor = 'var(--c-border)'
+              e.currentTarget.style.boxShadow = 'var(--c-card-shadow)'
+            }}
+          >
             <div className="mb-5">
               <h3 className="font-mono text-xl md:text-2xl font-bold" style={{ color: 'var(--c-text)' }}>{activeGroup.label}</h3>
               <p className="mt-2 max-w-3xl text-sm leading-relaxed" style={{ color: 'var(--c-muted)' }}>

@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react'
 import Icon from '@/components/Icon'
 
 const titles = ['Software Engineer', 'AI Engineer', 'Cloud Engineer', 'Full-Stack Developer']
+const email = 'chidgopkarvedant02@gmail.com'
 
 export default function Hero() {
   const [titleIndex, setTitleIndex] = useState(0)
   const [displayed, setDisplayed] = useState('')
   const [deleting, setDeleting] = useState(false)
+  const [copiedEmail, setCopiedEmail] = useState(false)
 
   useEffect(() => {
     const current = titles[titleIndex]
@@ -21,6 +23,12 @@ export default function Hero() {
     else { setDeleting(false); setTitleIndex(i => (i + 1) % titles.length) }
     return () => clearTimeout(timeout)
   }, [displayed, deleting, titleIndex])
+
+  const copyEmail = () => {
+    navigator.clipboard?.writeText(email).catch(() => undefined)
+    setCopiedEmail(true)
+    window.setTimeout(() => setCopiedEmail(false), 1800)
+  }
 
   return (
     <section id="hero" className="min-h-screen flex flex-col justify-center px-4 md:px-16 pt-14 overflow-hidden">
@@ -53,13 +61,14 @@ export default function Hero() {
           </a>
           <div className="flex gap-2">
             {[
-              { label: 'Email', href: 'mailto:chidgopkarvedant02@gmail.com', icon: 'mail' as const },
+              { label: 'Email', href: `mailto:${email}`, icon: 'mail' as const },
               { label: 'LinkedIn', href: 'https://linkedin.com/in/vedant-chidgopkar', icon: 'linkedin' as const },
               { label: 'GitHub', href: 'https://github.com/vedantvc', icon: 'github' as const },
             ].map(({ label, href, icon }) => (
               <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined}
                 rel="noopener noreferrer"
                 aria-label={label}
+                onClick={label === 'Email' ? copyEmail : undefined}
                 className="inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors"
                 style={{ color: 'var(--c-muted)' }}
                 onMouseEnter={e => { e.currentTarget.style.color = 'var(--c-accent)'; e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)' }}
@@ -68,6 +77,13 @@ export default function Hero() {
               </a>
             ))}
           </div>
+          <span
+            aria-live="polite"
+            className={`font-mono text-xs transition-opacity duration-200 ${copiedEmail ? 'opacity-100' : 'opacity-0'}`}
+            style={{ color: 'var(--c-accent)' }}
+          >
+            Email copied to clipboard
+          </span>
         </div>
         <a href="#about" className="hero-item mt-10 inline-block font-mono text-xs sm:text-sm transition-colors"
           style={{ color: 'var(--c-muted)', animationDelay: '500ms' }}

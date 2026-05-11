@@ -13,6 +13,10 @@ export function useIntersectionObserver(options?: IntersectionObserverInit) {
       const nextScrollY = window.scrollY
       scrollingUp.current = nextScrollY < lastScrollY.current
       lastScrollY.current = nextScrollY
+
+      if (scrollingUp.current && nextScrollY < window.innerHeight * 0.25) {
+        setIsVisible(false)
+      }
     }
 
     const observer = new IntersectionObserver(
@@ -22,7 +26,9 @@ export function useIntersectionObserver(options?: IntersectionObserverInit) {
           return
         }
 
-        if (scrollingUp.current && entry.boundingClientRect.top > window.innerHeight) {
+        const nearTop = window.scrollY < window.innerHeight * 0.25
+
+        if (scrollingUp.current && nearTop && entry.boundingClientRect.top > window.innerHeight) {
           setIsVisible(false)
         }
       },
