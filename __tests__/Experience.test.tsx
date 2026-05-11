@@ -4,7 +4,7 @@ import Experience from '@/components/Experience'
 describe('Experience', () => {
   it('renders section heading', () => {
     render(<Experience />)
-    expect(screen.getByText('experience')).toBeInTheDocument()
+    expect(screen.getByText(/Experience/)).toBeInTheDocument()
   })
 
   it('renders all four companies', () => {
@@ -15,6 +15,13 @@ describe('Experience', () => {
     expect(screen.getByText('Logicon Technosolutions')).toBeInTheDocument()
   })
 
+  it('renders company website links', () => {
+    render(<Experience />)
+    expect(screen.getByText('PayPal').closest('a')).toHaveAttribute('href', 'https://www.paypal.com')
+    expect(screen.getByText('Oxmaint').closest('a')).toHaveAttribute('href', 'https://oxmaint.com')
+    expect(screen.getByText('Logicon Technosolutions').closest('a')).toHaveAttribute('href', 'https://www.logicontech.com/')
+  })
+
   it('renders role titles', () => {
     render(<Experience />)
     expect(screen.getByText('Software Engineer II')).toBeInTheDocument()
@@ -23,8 +30,8 @@ describe('Experience', () => {
 
   it('renders date ranges', () => {
     render(<Experience />)
-    expect(screen.getByText('Apr 2025 – Present')).toBeInTheDocument()
-    expect(screen.getByText('Jul 2024 – Apr 2025')).toBeInTheDocument()
+    expect(screen.getByText('Apr 2025 - Present')).toBeInTheDocument()
+    expect(screen.getByText('Jul 2024 - Apr 2025')).toBeInTheDocument()
   })
 
   it('renders tech tags for PayPal role', () => {

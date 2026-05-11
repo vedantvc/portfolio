@@ -17,22 +17,22 @@ describe('Hero', () => {
 
   it('renders email link', () => {
     render(<Hero />)
-    expect(screen.getByText('Email')).toHaveAttribute('href', 'mailto:chidgopkarvedant02@gmail.com')
+    expect(screen.getByRole('link', { name: 'Email' })).toHaveAttribute('href', 'mailto:chidgopkarvedant02@gmail.com')
   })
 
   it('renders LinkedIn link', () => {
     render(<Hero />)
-    expect(screen.getByText('LinkedIn')).toHaveAttribute('href', 'https://linkedin.com/in/vedant-chidgopkar')
+    expect(screen.getByRole('link', { name: 'LinkedIn' })).toHaveAttribute('href', 'https://linkedin.com/in/vedant-chidgopkar')
   })
 
   it('renders GitHub link', () => {
     render(<Hero />)
-    expect(screen.getByText('GitHub')).toHaveAttribute('href', 'https://github.com/vedantvc')
+    expect(screen.getByRole('link', { name: 'GitHub' })).toHaveAttribute('href', 'https://github.com/vedantvc')
   })
 
   it('renders scroll anchor', () => {
     render(<Hero />)
     const scrollLink = screen.getByText('↓ scroll').closest('a')
-    expect(scrollLink).toHaveAttribute('href', '#experience')
+    expect(scrollLink).toHaveAttribute('href', '#about')
   })
 })

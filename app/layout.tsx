@@ -9,10 +9,10 @@ const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'], variable: '--font-mon
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' })
 
 export const metadata: Metadata = {
-  title: 'Vedant Chidgopkar — Software Engineer',
+  title: 'Vedant Chidgopkar - Software Engineer',
   description: 'Software Engineer with 4+ years building scalable systems across fintech and enterprise platforms.',
   openGraph: {
-    title: 'Vedant Chidgopkar — Software Engineer',
+    title: 'Vedant Chidgopkar - Software Engineer',
     description: 'Software Engineer with 4+ years in fintech and AI engineering. Currently at PayPal.',
     type: 'website', locale: 'en_US',
   },
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${jetbrainsMono.variable} ${inter.variable}`} suppressHydrationWarning>
       <body
-        className="bg-[#f0f2ff] dark:bg-[#0d1117] text-[#1a1d2e] dark:text-white antialiased transition-colors duration-300"
+        className="antialiased"
         suppressHydrationWarning
       >
         <ThemeProvider>

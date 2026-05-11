@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import Icon from '@/components/Icon'
 
 type Category = 'All' | 'AI/ML' | 'Fintech' | 'Full-Stack'
 
@@ -64,24 +65,38 @@ function ProjectCard({ project, delay }: { project: typeof projects[0]; delay: n
     <div
       ref={ref}
       data-visible={isVisible}
-      className="scroll-reveal bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-5 flex flex-col hover:border-[#6366f1]/50 hover:shadow-[0_0_24px_rgba(99,102,241,0.08)] hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300"
-      style={{ transitionDelay: `${delay}ms` }}
+      className="scroll-reveal rounded-lg backdrop-blur-sm border p-5 flex flex-col hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300"
+      style={{
+        backgroundColor: 'var(--c-surface)',
+        borderColor: 'var(--c-border)',
+        boxShadow: 'var(--c-card-shadow)',
+        transitionDelay: `${delay}ms`,
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = 'rgba(99,102,241,0.5)'
+        e.currentTarget.style.boxShadow = '0 24px 54px rgba(99,102,241,0.14)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = 'var(--c-border)'
+        e.currentTarget.style.boxShadow = 'var(--c-card-shadow)'
+      }}
     >
       <div className="flex items-start justify-between mb-3">
         <div>
-          <h3 className="font-mono text-sm font-bold text-white">{project.title}</h3>
-          <p className="font-mono text-xs text-[#818cf8] mt-0.5">{project.company}</p>
+          <h3 className="font-mono text-sm font-bold" style={{ color: 'var(--c-text)' }}>{project.title}</h3>
+          <p className="font-mono text-xs mt-0.5" style={{ color: 'var(--c-accent)' }}>{project.company}</p>
         </div>
-        <span className="font-mono text-xs text-[#6366f1] bg-[#6366f1]/10 border border-[#6366f1]/20 px-2 py-0.5 rounded shrink-0">
+        <span className="font-mono text-xs text-[#6366f1] bg-[#6366f1]/10 border border-[#6366f1]/20 px-2 py-0.5 rounded-md shrink-0">
           {project.highlight}
         </span>
       </div>
 
-      <p className="text-xs text-[#8892a4] leading-relaxed mb-4 flex-1">{project.desc}</p>
+      <p className="text-xs leading-relaxed mb-4 flex-1" style={{ color: 'var(--c-muted)' }}>{project.desc}</p>
 
       <div className="flex flex-wrap gap-1.5">
         {project.tags.map((tag) => (
-          <span key={tag} className="font-mono text-xs px-2 py-0.5 bg-[#0d1117]/60 border border-[#1e2235] text-[#8892a4]">
+          <span key={tag} className="rounded-md font-mono text-xs px-2 py-0.5 border"
+            style={{ backgroundColor: 'var(--c-tag-bg)', borderColor: 'var(--c-border)', color: 'var(--c-muted)' }}>
             {tag}
           </span>
         ))}
@@ -97,15 +112,23 @@ export default function Projects() {
   const filtered = active === 'All' ? projects : projects.filter((p) => p.category === active)
 
   return (
-    <section id="projects" className="py-20 px-6 md:px-16">
-      <div className="max-w-5xl mx-auto">
+    <section id="projects" className="scroll-mt-16 py-20 px-6 md:px-16" style={{ backgroundColor: 'var(--c-section-alt)' }}>
+      <div className="max-w-7xl mx-auto">
         <h2
           ref={ref}
           data-visible={isVisible}
-          className="scroll-reveal font-mono text-3xl font-bold text-white mb-8"
+          className="scroll-reveal font-mono text-3xl font-bold mb-8"
+          style={{ color: 'var(--c-text)' }}
         >
-          <span className="text-[#818cf8]">./</span>projects
+          <Icon name="rocket" className="inline h-8 w-8 align-[-0.18em]" /> Featured Projects
         </h2>
+        <p
+          data-visible={isVisible}
+          className="scroll-reveal text-sm md:text-base mb-8 max-w-4xl"
+          style={{ color: 'var(--c-muted)', transitionDelay: '60ms' }}
+        >
+          Selected work across AI automation, fintech systems, edge inference, and full-stack product delivery.
+        </p>
 
         {/* Filter pills */}
         <div className="flex flex-wrap gap-2 mb-8">
@@ -113,11 +136,12 @@ export default function Projects() {
             <button
               key={f}
               onClick={() => setActive(f)}
-              className={`font-mono text-xs px-4 py-1.5 border transition-colors duration-200 ${
+              className={`rounded-md font-mono text-xs px-4 py-1.5 border transition-colors duration-200 ${
                 active === f
-                  ? 'border-[#6366f1] text-white bg-[#6366f1]/20'
-                  : 'border-[#1e2235] text-[#8892a4] hover:border-[#818cf8]/40 hover:text-[#818cf8]'
+                  ? 'border-[#6366f1] text-white bg-[#6366f1]/80'
+                  : 'hover:border-[#818cf8]/60'
               }`}
+              style={active === f ? undefined : { color: 'var(--c-muted)', borderColor: 'var(--c-border)' }}
             >
               {f}
             </button>

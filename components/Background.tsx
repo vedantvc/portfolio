@@ -1,6 +1,6 @@
 'use client'
 
-// Deterministic star data — no Math.random() to avoid hydration mismatch
+// Deterministic star data - no Math.random() to avoid hydration mismatch
 const STARS = [
   { top: '8%',  left: '10%', dur: '3.5s', delay: '0s',   len: 100 },
   { top: '15%', left: '55%', dur: '4.2s', delay: '1.2s', len: 80  },
@@ -18,7 +18,7 @@ const STARS = [
 
 export default function Background() {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 opacity-0 dark:opacity-100 transition-opacity duration-500" aria-hidden="true">
+    <div className="bg-layer fixed inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
 
       {/* Floating orbs */}
       <div className="absolute rounded-full blur-[140px]"

@@ -1,61 +1,56 @@
 'use client'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
+import Icon from '@/components/Icon'
 
-const pillars = [
-  {
-    icon: '⚙️',
-    title: 'Distributed Systems',
-    desc: 'Fault-tolerant, high-concurrency services built for zero failure tolerance — idempotent pipelines, Kafka event streams, exactly-once guarantees at scale.',
-  },
-  {
-    icon: '🤖',
-    title: 'AI Engineering',
-    desc: 'Production AI agents, RAG pipelines, and LLMs running at the edge — systems that make autonomous decisions you can trust.',
-  },
-  {
-    icon: '🌐',
-    title: 'Full-Stack',
-    desc: 'From API contracts to UI — Next.js, TypeScript, Spring Boot, GraphQL, and cloud deployments that ship and stay up.',
-  },
+const stats = [
+  { value: '4+', label: 'Years Experience' },
+  { value: '4', label: 'Companies Worked' },
+  { value: '15+', label: 'Projects Delivered' },
+  { value: '20+', label: 'Technologies' },
 ]
 
 export default function About() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="about" className="py-12 px-6 md:px-16">
-      <div className="max-w-4xl mx-auto">
-        <h2
-          ref={ref}
-          data-visible={isVisible}
-          className="scroll-reveal font-mono text-3xl font-bold text-[#1a1d2e] dark:text-white mb-5"
-        >
-          <span className="text-[#6366f1] dark:text-[#818cf8]">./</span>about
+    <section id="about" className="scroll-mt-16 py-12 px-6 md:px-16">
+      <div className="max-w-7xl mx-auto">
+        <h2 ref={ref} data-visible={isVisible}
+          className="scroll-reveal font-mono text-3xl font-bold mb-5"
+          style={{ color: 'var(--c-text)' }}>
+          <Icon name="user" className="inline h-8 w-8 align-[-0.18em]" /> About Me
         </h2>
-
-        <p
-          data-visible={isVisible}
-          className="scroll-reveal text-[#5a6280] dark:text-[#9aa3b5] text-base leading-relaxed mb-8 max-w-3xl"
-          style={{ transitionDelay: '80ms' }}
-        >
-          I build systems that can&apos;t afford to fail. The kind that process millions of transactions,
-          make autonomous decisions in real time, and scale without breaking. My work sits at the
-          intersection of distributed architecture and applied AI — not as separate disciplines, but
-          as a single craft. I care about correctness, resilience, and the engineering of things
-          people actually depend on.
+        <p data-visible={isVisible}
+          className="scroll-reveal text-sm md:text-base mb-5 max-w-4xl"
+          style={{ color: 'var(--c-muted)', transitionDelay: '40ms' }}>
+          Building dependable software for products that need to move fast without breaking trust.
         </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-          {pillars.map((p, i) => (
-            <div
-              key={p.title}
-              data-visible={isVisible}
-              className="scroll-reveal bg-white/80 dark:bg-[#131720]/80 backdrop-blur-sm border border-[#d4d8f0] dark:border-[#1e2235] p-4 hover:border-[#6366f1]/40 dark:hover:border-[#6366f1]/50 hover:shadow-[0_0_20px_rgba(99,102,241,0.08)] transition-[border-color,box-shadow] duration-300"
-              style={{ transitionDelay: `${160 + i * 80}ms` }}
-            >
-              <span className="text-xl mb-2 block">{p.icon}</span>
-              <h3 className="font-mono text-xs font-bold text-[#1a1d2e] dark:text-white mb-1.5">{p.title}</h3>
-              <p className="text-xs text-[#5a6280] dark:text-[#8892a4] leading-relaxed">{p.desc}</p>
+        <div className="grid gap-5 mb-8 max-w-5xl text-base leading-relaxed" style={{ color: 'var(--c-muted)' }}>
+          <p data-visible={isVisible} className="scroll-reveal" style={{ transitionDelay: '80ms' }}>
+            Based in San Jose with a Master&apos;s in Computer Science, I work across backend engineering, applied AI,
+            cloud infrastructure, and full-stack development. My experience spans fintech platforms, AI support agents
+            that automate repetitive operations, and customer-facing products where performance and reliability matter every day.
+          </p>
+          <p data-visible={isVisible} className="scroll-reveal" style={{ transitionDelay: '120ms' }}>
+            The common thread is practical engineering: taking complex requirements, shaping them into clear systems, and
+            shipping software that teams can trust in production. Always open to strong engineering teams, meaningful product
+            problems, and conversations that start with an interesting idea.
+          </p>
+        </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {stats.map((stat, i) => (
+            <div key={stat.label} data-visible={isVisible}
+              className="scroll-reveal rounded-lg border p-5 text-center backdrop-blur-sm transition-[border-color,transform] duration-300 hover:-translate-y-1"
+              style={{
+                backgroundColor: 'var(--c-surface)',
+                borderColor: 'var(--c-border)',
+                boxShadow: 'var(--c-card-shadow)',
+                transitionDelay: `${150 + i * 70}ms`,
+              }}
+              onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)')}
+              onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--c-border)')}>
+              <p className="font-mono text-3xl md:text-4xl font-bold mb-2" style={{ color: 'var(--c-accent)' }}>{stat.value}</p>
+              <p className="text-sm md:text-base" style={{ color: 'var(--c-muted)' }}>{stat.label}</p>
             </div>
           ))}
         </div>

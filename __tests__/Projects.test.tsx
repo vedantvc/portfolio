@@ -4,7 +4,7 @@ import Projects from '@/components/Projects'
 describe('Projects', () => {
   it('renders section heading', () => {
     render(<Projects />)
-    expect(screen.getByText('projects')).toBeInTheDocument()
+    expect(screen.getByText(/Featured Projects/)).toBeInTheDocument()
   })
 
   it('renders all project names', () => {

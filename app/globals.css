@@ -1,23 +1,55 @@
 /* app/globals.css */
 @import "tailwindcss";
 
-/* ── Class-based dark mode for next-themes ── */
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
-  --color-accent: #818cf8;
   --font-family-mono: var(--font-mono), ui-monospace, monospace;
   --font-family-sans: var(--font-sans), ui-sans-serif, sans-serif;
 }
 
+/* Theme tokens - swapped by next-themes via html.dark */
+:root {
+  --c-bg:          #eef2ff;
+  --c-surface:     transparent;
+  --c-nav-bg:      rgba(248, 250, 255, 0.9);
+  --c-border:      rgba(99, 102, 241, 0.08);
+  --c-text:        #1a1d2e;
+  --c-muted:       #5a6280;
+  --c-subtle:      #4a5268;
+  --c-accent:      #6366f1;
+  --c-accent-soft: #818cf8;
+  --c-bar-bg:      #d7ddf2;
+  --c-section-alt: rgba(255, 255, 255, 0.64);
+  --c-tag-bg:      rgba(226, 232, 255, 0.18);
+  --c-card-shadow: none;
+  --c-bg-faded:    rgba(13, 17, 23, 0);   /* orbs opacity in light */
+}
+
+html.dark {
+  --c-bg:          #090d16;
+  --c-surface:     transparent;
+  --c-nav-bg:      rgba(9, 13, 22, 0.9);
+  --c-border:      rgba(129, 140, 248, 0.1);
+  --c-text:        #ffffff;
+  --c-muted:       #8892a4;
+  --c-subtle:      #c7cfe0;
+  --c-accent:      #818cf8;
+  --c-accent-soft: #a5b4fc;
+  --c-bar-bg:      #26314a;
+  --c-section-alt: rgba(17, 24, 39, 0.74);
+  --c-tag-bg:      rgba(9, 13, 22, 0.18);
+  --c-card-shadow: none;
+  --c-bg-faded:    rgba(13, 17, 23, 1);   /* orbs visible in dark */
+}
+
 html { scroll-behavior: smooth; }
+body { background-color: var(--c-bg); color: var(--c-text); transition: background-color 0.3s ease, color 0.3s ease; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
 }
 
-/* ── Orb drifts ── */
+/* Orb drifts */
 @keyframes orb-drift-1 {
   0%, 100% { transform: translate(0,   0)   scale(1);    }
   33%       { transform: translate(-70px, 50px)  scale(1.06); }
@@ -34,30 +66,26 @@ html { scroll-behavior: smooth; }
   70%       { transform: translate(70px,  40px)  scale(0.94); }
 }
 
-/* ── Shooting stars ── */
+/* Background layer opacity - keep stars visible in light mode */
+.bg-layer { opacity: 0.8; transition: opacity 0.5s ease; }
+html.dark .bg-layer { opacity: 1; }
+
+/* Shooting stars */
 .shooting-star {
-  position: absolute;
-  height: 1.5px;
-  width: var(--len, 90px);
+  position: absolute; height: 1.5px; width: var(--len, 90px);
   transform: rotate(-45deg);
   animation: shoot var(--dur, 4s) ease-in var(--delay, 0s) infinite;
 }
 .shooting-star::before {
-  content: '';
-  position: absolute;
-  inset: 0;
+  content: ''; position: absolute; inset: 0;
   background: linear-gradient(to left, rgba(165,180,252,0.9), transparent);
   border-radius: 2px;
 }
 .shooting-star::after {
-  content: '';
-  position: absolute;
-  right: 0; top: 50%;
-  width: 3px; height: 3px;
-  border-radius: 50%;
-  background: #fff;
-  transform: translateY(-50%);
-  box-shadow: 0 0 6px 3px rgba(129,140,248,0.6);
+  content: ''; position: absolute; right: 0; top: 50%;
+  width: 3px; height: 3px; border-radius: 50%;
+  background: #fff; transform: translateY(-50%);
+  box-shadow: 0 0 6px 3px rgba(129,140,248,0.6), 0 0 14px 6px rgba(99,102,241,0.28);
 }
 @keyframes shoot {
   0%   { transform: rotate(-45deg) translateX(-100px); opacity: 0; }
@@ -66,35 +94,25 @@ html { scroll-behavior: smooth; }
   100% { transform: rotate(-45deg) translateX(700px); opacity: 0; }
 }
 
-/* ── Hero entrance ── */
+/* Hero entrance */
 @keyframes hero-in {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.hero-item {
-  opacity: 0;
-  animation: hero-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
+.hero-item { opacity: 0; animation: hero-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
-/* ── Scroll reveal ── */
+/* Scroll reveal */
 .scroll-reveal {
-  opacity: 0;
-  transform: translateY(36px);
+  opacity: 0; transform: translateY(36px);
   transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.scroll-reveal[data-visible="true"] {
-  opacity: 1;
-  transform: translateY(0);
-}
+.scroll-reveal[data-visible="true"] { opacity: 1; transform: translateY(0); }
 
-/* ── Skill bar fill ── */
-.skill-bar-fill {
-  width: 0%;
-  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
-}
+/* Skill bar fill */
+.skill-bar-fill { width: 0%; transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1); }
 .skill-bar-fill[data-visible="true"] { width: var(--level); }
 
-/* ── Timeline dot pulse ── */
+/* Timeline dot pulse */
 @keyframes dot-pulse {
   0%, 100% { box-shadow: 0 0 0 0   rgba(99,102,241,0.6); }
   50%       { box-shadow: 0 0 0 7px rgba(99,102,241,0); }
