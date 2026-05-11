@@ -39,7 +39,7 @@ const roles = [
       'Standardized containerized deployments on AWS EC2 via Docker, eliminating configuration-driven deployment failures.',
       'Optimized PostgreSQL query plans and MongoDB aggregation indexes, reducing transaction latency by 35%.',
     ],
-    tags: ['Next.js', 'TypeScript', 'GraphQL', 'Spring Security', 'AWS', 'Docker', 'PostgreSQL'],
+    tags: ['Next.js', 'TypeScript', 'GraphQL', 'Spring Boot', 'Spring Security', 'AWS', 'Docker', 'PostgreSQL'],
   },
   {
     company: 'Logicon Technosolutions',
