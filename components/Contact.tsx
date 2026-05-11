@@ -39,6 +39,7 @@ export default function Contact() {
               <a key={item.value} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 aria-label={item.aria}
+                title={item.copy ? 'Click to copy email' : item.aria}
                 onClick={item.copy ? copyEmail : undefined}
                 className="flex min-w-0 items-start gap-3 rounded-lg border p-4 backdrop-blur-sm transition-[border-color,box-shadow,color] duration-300"
                 style={{ color: 'var(--c-muted)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}

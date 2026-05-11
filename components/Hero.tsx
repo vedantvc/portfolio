@@ -67,9 +67,10 @@ export default function Hero() {
                 { label: 'GitHub', href: 'https://github.com/vedantvc', icon: 'github' as const },
               ].map(({ label, href, icon }) => (
                 <a key={label} href={href} target={href.startsWith('http') ? '_blank' : undefined}
-                  rel="noopener noreferrer"
-                  aria-label={label}
-                  onClick={label === 'Email' ? copyEmail : undefined}
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label === 'Email' ? 'Copy email' : undefined}
+                onClick={label === 'Email' ? copyEmail : undefined}
                   className="inline-flex h-10 w-10 items-center justify-center rounded-md border transition-colors"
                   style={{ color: 'var(--c-muted)' }}
                   onMouseEnter={e => { e.currentTarget.style.color = 'var(--c-accent)'; e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)' }}
