@@ -66,8 +66,8 @@ function RoleCard({ role }: { role: typeof roles[0] }) {
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
       }`}
     >
-      {/* Timeline dot */}
-      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#6366f1] ring-4 ring-[#818cf8]/20" />
+      {/* Timeline dot with pulse */}
+      <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#6366f1] ring-4 ring-[#818cf8]/20 animate-dot-pulse" />
 
       {/* Header row */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-3">
