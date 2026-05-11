@@ -29,7 +29,7 @@ describe('Experience', () => {
 
   it('renders tech tags for PayPal role', () => {
     render(<Experience />)
-    expect(screen.getByText('Spring Boot')).toBeInTheDocument()
+    expect(screen.getAllByText('Spring Boot').length).toBeGreaterThan(0)
     expect(screen.getByText('Oracle')).toBeInTheDocument()
     expect(screen.getByText('Kafka')).toBeInTheDocument()
   })
