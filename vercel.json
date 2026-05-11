@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "portfolio-one-ochre-22.vercel.app"
+        }
+      ],
+      "destination": "https://vedantchidgopkar.com/$1",
+      "permanent": true
+    }
+  ]
+}

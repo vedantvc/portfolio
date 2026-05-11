@@ -144,15 +144,15 @@ export default function Skills() {
 
         <div
           data-visible={isVisible}
-          className="scroll-reveal grid gap-4 lg:grid-cols-[280px_1fr]"
+          className="scroll-reveal grid min-w-0 max-w-full gap-4 overflow-hidden lg:grid-cols-[280px_1fr]"
           style={{ transitionDelay: '120ms' }}
         >
           <aside
-            className="rounded-lg border p-4 lg:self-start"
+            className="min-w-0 max-w-full overflow-hidden rounded-lg border p-3 sm:p-4 lg:self-start"
             style={{ backgroundColor: 'var(--c-surface)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}
             aria-label="Skill categories"
           >
-            <div className="flex gap-2 overflow-x-auto lg:block lg:space-y-2 lg:overflow-visible">
+            <div className="no-scrollbar flex w-full min-w-0 max-w-full gap-2 overflow-x-auto overscroll-x-contain lg:block lg:space-y-2 lg:overflow-visible">
               {skillGroups.map((group, index) => {
                 const selected = activeIndex === index
                 return (
@@ -160,7 +160,7 @@ export default function Skills() {
                     key={group.label}
                     type="button"
                     onClick={() => setActiveIndex(index)}
-                    className="min-w-fit rounded-md border px-4 py-3 text-left text-sm font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_6px_14px_rgba(15,23,42,0.08)] transition-[background-color,border-color,color,box-shadow,transform] duration-200 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_12px_26px_rgba(99,102,241,0.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#818cf8]/60 lg:w-full lg:hover:translate-x-1"
+                    className="shrink-0 rounded-md border px-3 py-2.5 text-left text-xs font-semibold shadow-[inset_0_1px_0_rgba(255,255,255,0.16),0_6px_14px_rgba(15,23,42,0.08)] transition-[background-color,border-color,color,box-shadow,transform] duration-200 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_12px_26px_rgba(99,102,241,0.16)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#818cf8]/60 sm:px-4 sm:py-3 sm:text-sm lg:w-full lg:hover:translate-x-1"
                     style={{
                       backgroundColor: selected ? 'rgba(99,102,241,0.16)' : 'transparent',
                       borderColor: selected ? 'rgba(99,102,241,0.55)' : 'var(--c-border)',
@@ -175,9 +175,9 @@ export default function Skills() {
             </div>
           </aside>
 
-          <div className="rounded-lg border p-5 md:p-6" style={{ backgroundColor: 'var(--c-surface)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}>
+          <div className="min-w-0 max-w-full overflow-hidden rounded-lg border p-4 md:p-6" style={{ backgroundColor: 'var(--c-surface)', borderColor: 'var(--c-border)', boxShadow: 'var(--c-card-shadow)' }}>
             <div className="mb-5">
-              <h3 className="font-mono text-2xl font-bold" style={{ color: 'var(--c-text)' }}>{activeGroup.label}</h3>
+              <h3 className="font-mono text-xl md:text-2xl font-bold" style={{ color: 'var(--c-text)' }}>{activeGroup.label}</h3>
               <p className="mt-2 max-w-3xl text-sm leading-relaxed" style={{ color: 'var(--c-muted)' }}>
                 {activeGroup.summary}
               </p>

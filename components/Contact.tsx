@@ -29,12 +29,12 @@ export default function Contact() {
               <a key={item.value} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                 aria-label={item.aria}
-                className="flex items-start gap-3 rounded-lg border p-4 transition-colors"
+                className="flex min-w-0 items-start gap-3 rounded-lg border p-4 transition-colors"
                 style={{ color: 'var(--c-muted)', borderColor: 'var(--c-border)' }}
                 onMouseEnter={e => { e.currentTarget.style.color = 'var(--c-accent)'; e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)' }}
                 onMouseLeave={e => { e.currentTarget.style.color = 'var(--c-muted)'; e.currentTarget.style.borderColor = 'var(--c-border)' }}>
                 <Icon name={item.icon} className="mt-0.5 h-4 w-4 shrink-0" />
-                <span className="text-sm">{item.value}</span>
+                <span className="min-w-0 break-words text-sm">{item.value}</span>
               </a>
             ))}
           </div>

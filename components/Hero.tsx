@@ -23,31 +23,31 @@ export default function Hero() {
   }, [displayed, deleting, titleIndex])
 
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center px-6 md:px-16 pt-14 overflow-hidden">
+    <section id="hero" className="min-h-screen flex flex-col justify-center px-4 md:px-16 pt-14 overflow-hidden">
       <div className="max-w-7xl w-full">
         <p className="hero-item font-mono text-sm tracking-widest mb-4 opacity-60"
           style={{ color: 'var(--c-accent)', animationDelay: '0ms' }}>
           Hi, I&apos;m
         </p>
-        <h1 className="hero-item font-mono text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-none"
+        <h1 className="hero-item font-mono text-4xl sm:text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-none"
           style={{ color: 'var(--c-text)', animationDelay: '100ms' }}>
           <span className="block">VEDANT</span>
           <span className="block bg-gradient-to-r from-[#6366f1] via-[#818cf8] to-[#67e8f9] bg-clip-text text-transparent">
             CHIDGOPKAR
           </span>
         </h1>
-        <div className="hero-item font-mono text-xl md:text-2xl mb-6 h-8 flex items-center"
+        <div className="hero-item font-mono text-lg md:text-2xl mb-6 h-8 flex items-center"
           style={{ color: 'var(--c-accent)', animationDelay: '200ms' }}>
           {displayed}<span className="animate-pulse ml-0.5" style={{ color: 'var(--c-accent-soft)' }}>|</span>
         </div>
-        <p className="hero-item text-lg max-w-2xl mb-10 leading-relaxed"
+        <p className="hero-item text-sm sm:text-base md:text-lg max-w-2xl mb-10 leading-relaxed"
           style={{ color: 'var(--c-muted)', animationDelay: '300ms' }}>
           Production systems built for reliability: payment workflows, AI support agents,
           cloud infrastructure, and full-stack tools designed to hold up in the real world.
         </p>
-        <div className="hero-item flex flex-wrap gap-4 items-center" style={{ animationDelay: '400ms' }}>
+        <div className="hero-item flex flex-wrap gap-3 items-center" style={{ animationDelay: '400ms' }}>
           <a href="/resume.pdf" download
-            className="inline-flex items-center gap-2 font-mono text-sm px-5 py-2.5 bg-[#6366f1] text-white font-bold hover:bg-[#818cf8] transition-colors rounded-md">
+            className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm px-4 sm:px-5 py-2.5 bg-[#6366f1] text-white font-bold hover:bg-[#818cf8] transition-colors rounded-md">
             <Icon name="download" className="h-4 w-4" />
             Download Resume
           </a>
@@ -69,7 +69,7 @@ export default function Hero() {
             ))}
           </div>
         </div>
-        <a href="#about" className="hero-item mt-10 inline-block font-mono text-sm transition-colors"
+        <a href="#about" className="hero-item mt-10 inline-block font-mono text-xs sm:text-sm transition-colors"
           style={{ color: 'var(--c-muted)', animationDelay: '500ms' }}
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--c-accent)')}
           onMouseLeave={e => (e.currentTarget.style.color = 'var(--c-muted)')}>

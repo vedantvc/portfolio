@@ -41,8 +41,8 @@ html.dark {
   --c-bg-faded:    rgba(13, 17, 23, 1);   /* orbs visible in dark */
 }
 
-html { scroll-behavior: smooth; }
-body { background-color: var(--c-bg); color: var(--c-text); transition: background-color 0.3s ease, color 0.3s ease; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { overflow-x: hidden; background-color: var(--c-bg); color: var(--c-text); transition: background-color 0.3s ease, color 0.3s ease; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -118,3 +118,6 @@ html.dark .bg-layer { opacity: 1; }
   50%       { box-shadow: 0 0 0 7px rgba(99,102,241,0); }
 }
 .animate-dot-pulse { animation: dot-pulse 2.4s ease-in-out infinite; }
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
