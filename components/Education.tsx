@@ -24,13 +24,9 @@ function DegreeCard({ deg, delay }: { deg: typeof degrees[0]; delay: number }) {
   return (
     <div
       ref={ref}
-      className={`bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-6 hover:border-[#6366f1]/40 hover:shadow-[0_0_28px_rgba(99,102,241,0.08)] transition-all duration-500 animate-float ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-      }`}
-      style={{
-        transitionDelay: `${delay}ms`,
-        animationDelay: `${delay * 0.5}ms`,
-      }}
+      data-visible={isVisible}
+      className="scroll-reveal bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-6 hover:border-[#6366f1]/40 hover:shadow-[0_0_28px_rgba(99,102,241,0.08)] hover:scale-[1.02] transition-[border-color,box-shadow,transform] duration-300"
+      style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="flex items-start justify-between gap-4">
         <div>
@@ -57,14 +53,13 @@ export default function Education() {
       <div className="max-w-4xl mx-auto">
         <h2
           ref={ref}
-          className={`font-mono text-3xl font-bold text-white mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
+          data-visible={isVisible}
+          className="scroll-reveal font-mono text-3xl font-bold text-white mb-10"
         >
           <span className="text-[#818cf8]">./</span>education
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {degrees.map((deg, i) => (
             <DegreeCard key={deg.school} deg={deg} delay={i * 150} />
           ))}

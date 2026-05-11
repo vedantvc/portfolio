@@ -62,9 +62,8 @@ function RoleCard({ role }: { role: typeof roles[0] }) {
   return (
     <div
       ref={ref}
-      className={`relative pl-8 pb-12 last:pb-0 transition-all duration-700 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      data-visible={isVisible}
+      className="scroll-reveal relative pl-8 pb-6 last:pb-0"
     >
       {/* Timeline dot with pulse */}
       <div className="absolute left-0 top-1.5 w-3 h-3 rounded-full bg-[#6366f1] ring-4 ring-[#818cf8]/20 animate-dot-pulse" />
@@ -114,9 +113,8 @@ export default function Experience() {
       <div className="max-w-4xl mx-auto">
         <h2
           ref={ref}
-          className={`font-mono text-3xl font-bold text-white mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
+          data-visible={isVisible}
+          className="scroll-reveal font-mono text-3xl font-bold text-white mb-10"
         >
           <span className="text-[#818cf8]">./</span>experience
         </h2>

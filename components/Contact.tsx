@@ -9,9 +9,8 @@ export default function Contact() {
       <div className="max-w-4xl mx-auto">
         <div
           ref={ref}
-          className={`transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-          }`}
+          data-visible={isVisible}
+          className="scroll-reveal"
         >
           <p className="font-mono text-[#818cf8] text-sm tracking-widest mb-4 opacity-70">
             vedant.chidgopkar · available
@@ -50,7 +49,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div className="mt-20 pt-8 border-t border-[#1e2235]">
+        <div className="mt-16 pt-8 border-t border-[#1e2235]">
           <p className="font-mono text-xs text-[#8892a4]">
             © 2026 Vedant Chidgopkar · Built with Next.js + TypeScript
           </p>

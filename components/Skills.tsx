@@ -45,9 +45,8 @@ function SkillCard({ group, delay }: { group: typeof skillGroups[0]; delay: numb
   return (
     <div
       ref={ref}
-      className={`bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-5 hover:border-[#818cf8]/40 hover:shadow-[0_0_20px_rgba(99,102,241,0.08)] transition-all duration-500 ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-      }`}
+      data-visible={isVisible}
+      className="scroll-reveal bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-5 hover:border-[#818cf8]/40 hover:shadow-[0_0_20px_rgba(99,102,241,0.08)] hover:scale-[1.02] transition-[border-color,box-shadow,transform] duration-300"
       style={{ transitionDelay: `${delay}ms` }}
     >
       <div className="flex items-center gap-2 mb-4">
@@ -76,9 +75,8 @@ export default function Skills() {
       <div className="max-w-6xl mx-auto">
         <h2
           ref={ref}
-          className={`font-mono text-3xl font-bold text-white mb-16 transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
+          data-visible={isVisible}
+          className="scroll-reveal font-mono text-3xl font-bold text-white mb-10"
         >
           <span className="text-[#818cf8]">./</span><span>skills</span>
         </h2>
