@@ -7,28 +7,25 @@ describe('Skills', () => {
     expect(screen.getByText('skills')).toBeInTheDocument()
   })
 
-  it('renders all 7 skill groups', () => {
+  it('renders all 4 skill group labels', () => {
     render(<Skills />)
-    expect(screen.getByText('AI & ML Engineering')).toBeInTheDocument()
-    expect(screen.getByText('Distributed Systems')).toBeInTheDocument()
-    expect(screen.getByText('Java Backend Core')).toBeInTheDocument()
-    expect(screen.getByText('Full-Stack Web')).toBeInTheDocument()
+    expect(screen.getByText('Languages & Backend')).toBeInTheDocument()
+    expect(screen.getByText('AI & ML')).toBeInTheDocument()
     expect(screen.getByText('Cloud & DevOps')).toBeInTheDocument()
-    expect(screen.getByText('PayPal Fintech')).toBeInTheDocument()
-    expect(screen.getByText('Observability')).toBeInTheDocument()
+    expect(screen.getByText('Databases')).toBeInTheDocument()
   })
 
-  it('renders key AI skills', () => {
-    render(<Skills />)
-    expect(screen.getByText('LangChain')).toBeInTheDocument()
-    expect(screen.getByText('LangGraph')).toBeInTheDocument()
-    expect(screen.getByText('RAG Pipelines')).toBeInTheDocument()
-  })
-
-  it('renders key backend skills', () => {
+  it('renders key skills', () => {
     render(<Skills />)
     expect(screen.getByText('Java')).toBeInTheDocument()
     expect(screen.getByText('Spring Boot')).toBeInTheDocument()
+    expect(screen.getByText('LangChain / LangGraph')).toBeInTheDocument()
     expect(screen.getByText('Kafka')).toBeInTheDocument()
+  })
+
+  it('renders skill percentages', () => {
+    render(<Skills />)
+    expect(screen.getByText('95%')).toBeInTheDocument()
+    expect(screen.getByText('92%')).toBeInTheDocument()
   })
 })

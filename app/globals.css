@@ -11,36 +11,65 @@
   --font-family-sans: var(--font-sans), ui-sans-serif, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    transition-duration: 0ms !important;
-    animation-duration: 0ms !important;
-  }
+  *, *::before, *::after { transition-duration: 0ms !important; animation-duration: 0ms !important; }
 }
 
 /* ── Orb drifts ── */
 @keyframes orb-drift-1 {
-  0%, 100% { transform: translate(0px,   0px)   scale(1);    }
+  0%, 100% { transform: translate(0,   0)   scale(1);    }
   33%       { transform: translate(-70px, 50px)  scale(1.06); }
-  66%       { transform: translate(50px,  -40px) scale(0.94); }
+  66%       { transform: translate(50px, -40px)  scale(0.94); }
 }
 @keyframes orb-drift-2 {
-  0%, 100% { transform: translate(0px,   0px)    scale(1);    }
-  33%       { transform: translate(60px,  -55px)  scale(1.08); }
-  66%       { transform: translate(-50px, 40px)   scale(0.96); }
+  0%, 100% { transform: translate(0,   0)   scale(1);    }
+  33%       { transform: translate(60px,-55px)   scale(1.08); }
+  66%       { transform: translate(-50px, 40px)  scale(0.96); }
 }
 @keyframes orb-drift-3 {
-  0%, 100% { transform: translate(0px,   0px)    scale(1);    }
-  40%       { transform: translate(-60px, -80px)  scale(1.06); }
-  70%       { transform: translate(70px,   40px)  scale(0.94); }
+  0%, 100% { transform: translate(0,   0)   scale(1);    }
+  40%       { transform: translate(-60px,-80px)  scale(1.06); }
+  70%       { transform: translate(70px,  40px)  scale(0.94); }
 }
 
-/* ── Hero entrance: each child staggers in ── */
+/* ── Shooting stars ── */
+.shooting-star {
+  position: absolute;
+  height: 1.5px;
+  width: var(--len, 90px);
+  transform: rotate(-45deg);
+  animation: shoot var(--dur, 4s) ease-in var(--delay, 0s) infinite;
+}
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(165,180,252,0.9), transparent);
+  border-radius: 2px;
+}
+.shooting-star::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #fff;
+  transform: translateY(-50%);
+  box-shadow: 0 0 6px 3px rgba(129,140,248,0.6);
+}
+@keyframes shoot {
+  0%   { transform: rotate(-45deg) translateX(-100px); opacity: 0; }
+  4%   { opacity: 1; }
+  80%  { opacity: 0.7; }
+  100% { transform: rotate(-45deg) translateX(700px);  opacity: 0; }
+}
+
+/* ── Hero entrance ── */
 @keyframes hero-in {
   from { opacity: 0; transform: translateY(22px); }
   to   { opacity: 1; transform: translateY(0);    }
@@ -50,7 +79,7 @@ html {
   animation: hero-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* ── Scroll reveal — toggle via data-visible attribute ── */
+/* ── Scroll reveal ── */
 .scroll-reveal {
   opacity: 0;
   transform: translateY(36px);
@@ -61,20 +90,18 @@ html {
   transform: translateY(0);
 }
 
-/* ── Floating card ── */
-@keyframes float-card {
-  0%, 100% { transform: translateY(0px);  }
-  50%       { transform: translateY(-5px); }
+/* ── Skill bar fill ── */
+.skill-bar-fill {
+  width: 0%;
+  transition: width 1.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.animate-float {
-  animation: float-card 4s ease-in-out infinite;
+.skill-bar-fill[data-visible="true"] {
+  width: var(--level);
 }
 
 /* ── Timeline dot pulse ── */
 @keyframes dot-pulse {
-  0%, 100% { box-shadow: 0 0 0 0   rgba(99, 102, 241, 0.6); }
-  50%       { box-shadow: 0 0 0 7px rgba(99, 102, 241, 0);   }
+  0%, 100% { box-shadow: 0 0 0 0   rgba(99,102,241,0.6); }
+  50%       { box-shadow: 0 0 0 7px rgba(99,102,241,0);   }
 }
-.animate-dot-pulse {
-  animation: dot-pulse 2.4s ease-in-out infinite;
-}
+.animate-dot-pulse { animation: dot-pulse 2.4s ease-in-out infinite; }
