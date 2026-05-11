@@ -112,7 +112,7 @@ export default function Projects() {
   const filtered = active === 'All' ? projects : projects.filter((p) => p.category === active)
 
   return (
-    <section id="projects" className="scroll-mt-16 py-20 px-6 md:px-16" style={{ backgroundColor: 'var(--c-section-alt)' }}>
+    <section id="projects" className="scroll-mt-16 py-12 px-6 md:px-16" style={{ backgroundColor: 'var(--c-section-alt)' }}>
       <div className="max-w-7xl mx-auto">
         <h2
           ref={ref}
@@ -124,7 +124,7 @@ export default function Projects() {
         </h2>
         <p
           data-visible={isVisible}
-          className="scroll-reveal text-sm md:text-base mb-8 max-w-4xl"
+          className="scroll-reveal text-base mb-8 max-w-4xl"
           style={{ color: 'var(--c-muted)', transitionDelay: '60ms' }}
         >
           Selected work across AI automation, fintech systems, edge inference, and full-stack product delivery.

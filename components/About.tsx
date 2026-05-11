@@ -22,7 +22,7 @@ export default function About() {
           <Icon name="user" className="inline h-8 w-8 align-[-0.18em]" /> About Me
         </h2>
         <p data-visible={isVisible}
-          className="scroll-reveal text-sm md:text-base mb-5 max-w-4xl"
+          className="scroll-reveal text-base mb-5 max-w-4xl"
           style={{ color: 'var(--c-muted)', transitionDelay: '40ms' }}>
           Building dependable software for products that need to move fast without breaking trust.
         </p>
@@ -51,7 +51,7 @@ export default function About() {
               onMouseEnter={e => (e.currentTarget.style.borderColor = 'rgba(99,102,241,0.4)')}
               onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--c-border)')}>
               <p className="font-mono text-3xl md:text-4xl font-bold mb-2" style={{ color: 'var(--c-accent)' }}>{stat.value}</p>
-              <p className="text-sm md:text-base" style={{ color: 'var(--c-muted)' }}>{stat.label}</p>
+              <p className="text-base" style={{ color: 'var(--c-muted)' }}>{stat.label}</p>
             </div>
           ))}
         </div>

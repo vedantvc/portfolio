@@ -82,7 +82,7 @@ export default function Education() {
         </h2>
         <p
           data-visible={isVisible}
-          className="scroll-reveal text-sm md:text-base mb-8 max-w-4xl"
+          className="scroll-reveal text-base mb-8 max-w-4xl"
           style={{ color: 'var(--c-muted)', transitionDelay: '60ms' }}
         >
           Knowledge that compounds into sharper engineering judgment, stronger fundamentals, and better systems thinking.

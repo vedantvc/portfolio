@@ -157,7 +157,7 @@ export default function Experience() {
           <Icon name="briefcase" className="inline h-8 w-8 align-[-0.18em]" /> Experience
         </h2>
         <p data-visible={isVisible}
-          className="scroll-reveal text-sm md:text-base mb-10 max-w-4xl"
+          className="scroll-reveal text-base mb-10 max-w-4xl"
           style={{ color: 'var(--c-muted)', transitionDelay: '60ms' }}>
           Production work across backend, AI, cloud, and frontend systems, with a focus on reliability and scale.
         </p>

@@ -136,7 +136,7 @@ export default function Skills() {
         </h2>
         <p
           data-visible={isVisible}
-          className="scroll-reveal mb-8 max-w-4xl text-sm md:text-base"
+          className="scroll-reveal mb-8 max-w-4xl text-base"
           style={{ color: 'var(--c-muted)', transitionDelay: '60ms' }}
         >
           The tools and platforms I use to build resilient services, AI workflows, and fast product experiences.
