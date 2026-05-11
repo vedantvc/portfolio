@@ -5,7 +5,7 @@ export default function Contact() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="contact" className="py-20 px-6 md:px-16">
+    <section id="contact" className="py-12 px-6 md:px-16">
       <div className="max-w-4xl mx-auto">
         <div ref={ref} data-visible={isVisible} className="scroll-reveal">
           <p className="font-mono text-[#818cf8] text-sm tracking-widest mb-4 opacity-70">
@@ -17,7 +17,7 @@ export default function Contact() {
               something.
             </span>
           </h2>
-          <p className="text-[#8892a4] mb-10">San Jose, CA · Open to opportunities</p>
+          <p className="text-[#8892a4] mb-6">San Jose, CA · Open to opportunities</p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             {/* Primary CTA — schedule a meeting */}

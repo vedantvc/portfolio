@@ -7,12 +7,14 @@ describe('Skills', () => {
     expect(screen.getByText('skills')).toBeInTheDocument()
   })
 
-  it('renders all 4 skill group labels', () => {
+  it('renders all 6 skill group labels', () => {
     render(<Skills />)
-    expect(screen.getByText('Languages & Backend')).toBeInTheDocument()
+    expect(screen.getByText('Languages')).toBeInTheDocument()
+    expect(screen.getByText('Backend & Frameworks')).toBeInTheDocument()
     expect(screen.getByText('AI & ML')).toBeInTheDocument()
     expect(screen.getByText('Cloud & DevOps')).toBeInTheDocument()
     expect(screen.getByText('Databases')).toBeInTheDocument()
+    expect(screen.getByText('Observability & Tools')).toBeInTheDocument()
   })
 
   it('renders key skills', () => {
@@ -26,6 +28,6 @@ describe('Skills', () => {
   it('renders skill percentages', () => {
     render(<Skills />)
     expect(screen.getByText('95%')).toBeInTheDocument()
-    expect(screen.getByText('92%')).toBeInTheDocument()
+    expect(screen.getAllByText('92%').length).toBeGreaterThan(0)
   })
 })

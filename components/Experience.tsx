@@ -109,7 +109,7 @@ export default function Experience() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="experience" className="py-24 px-6 md:px-16">
+    <section id="experience" className="py-12 px-6 md:px-16">
       <div className="max-w-4xl mx-auto">
         <h2
           ref={ref}

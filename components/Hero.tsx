@@ -57,7 +57,7 @@ export default function Hero() {
             <a href="https://github.com/vedantvc" target="_blank" rel="noopener noreferrer" className="font-mono text-sm text-[#8892a4] hover:text-[#818cf8] transition-colors">GitHub</a>
           </div>
         </div>
-        <a href="#experience" className="hero-item mt-14 inline-block font-mono text-[#8892a4] text-sm hover:text-[#818cf8] transition-colors" style={{ animationDelay: '500ms' }}>
+        <a href="#experience" className="hero-item mt-10 inline-block font-mono text-[#8892a4] text-sm hover:text-[#818cf8] transition-colors" style={{ animationDelay: '500ms' }}>
           ↓ scroll
         </a>
       </div>

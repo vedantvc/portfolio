@@ -5,17 +5,17 @@ const pillars = [
   {
     icon: '⚙️',
     title: 'Distributed Systems',
-    desc: 'Designing fault-tolerant, high-concurrency services — from idempotent payment pipelines processing 10M+ daily transactions to Kafka event-driven architectures.',
+    desc: 'Fault-tolerant, high-concurrency services built for zero failure tolerance — idempotent pipelines, Kafka event streams, exactly-once guarantees at scale.',
   },
   {
     icon: '🤖',
     title: 'AI Engineering',
-    desc: 'Building production AI agents with LangChain, LangGraph, and RAG pipelines. Deployed quantized LLMs on edge hardware and MCP-based tool-calling systems.',
+    desc: 'Production AI agents, RAG pipelines, and LLMs running at the edge — systems that make autonomous decisions you can trust.',
   },
   {
     icon: '🌐',
-    title: 'Full-Stack Web',
-    desc: 'End-to-end product development with Next.js, TypeScript, Spring Boot, and GraphQL — from customer portals to containerized cloud deployments on AWS and Azure.',
+    title: 'Full-Stack',
+    desc: 'From API contracts to UI — Next.js, TypeScript, Spring Boot, GraphQL, and cloud deployments that ship and stay up.',
   },
 ]
 
@@ -23,38 +23,38 @@ export default function About() {
   const { ref, isVisible } = useIntersectionObserver()
 
   return (
-    <section id="about" className="py-20 px-6 md:px-16">
+    <section id="about" className="py-12 px-6 md:px-16">
       <div className="max-w-4xl mx-auto">
         <h2
           ref={ref}
           data-visible={isVisible}
-          className="scroll-reveal font-mono text-3xl font-bold text-white mb-6"
+          className="scroll-reveal font-mono text-3xl font-bold text-white mb-5"
         >
           <span className="text-[#818cf8]">./</span>about
         </h2>
 
         <p
           data-visible={isVisible}
-          className="scroll-reveal text-[#8892a4] text-lg leading-relaxed mb-12 max-w-3xl"
+          className="scroll-reveal text-[#9aa3b5] text-base leading-relaxed mb-8 max-w-3xl"
           style={{ transitionDelay: '80ms' }}
         >
-          Software Engineer based in San Jose, CA with 4+ years crafting scalable systems across
-          fintech and enterprise platforms. Currently at PayPal building repayment infrastructure.
-          Passionate about the intersection of distributed systems and AI engineering — from
-          payment microservices handling millions of transactions to production AI agents running
-          at the edge.
+          I build systems that can&apos;t afford to fail. The kind that process millions of transactions,
+          make autonomous decisions in real time, and scale without breaking. My work sits at the
+          intersection of distributed architecture and applied AI — not as separate disciplines, but
+          as a single craft. I care about correctness, resilience, and the engineering of things
+          people actually depend on.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
           {pillars.map((p, i) => (
             <div
               key={p.title}
               data-visible={isVisible}
-              className="scroll-reveal bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-5 hover:border-[#6366f1]/50 hover:shadow-[0_0_24px_rgba(99,102,241,0.1)] transition-[border-color,box-shadow] duration-300"
-              style={{ transitionDelay: `${160 + i * 100}ms` }}
+              className="scroll-reveal bg-[#131720]/80 backdrop-blur-sm border border-[#1e2235] p-4 hover:border-[#6366f1]/50 hover:shadow-[0_0_20px_rgba(99,102,241,0.08)] transition-[border-color,box-shadow] duration-300"
+              style={{ transitionDelay: `${160 + i * 80}ms` }}
             >
-              <span className="text-2xl mb-3 block">{p.icon}</span>
-              <h3 className="font-mono text-sm font-bold text-white mb-2">{p.title}</h3>
+              <span className="text-xl mb-2 block">{p.icon}</span>
+              <h3 className="font-mono text-xs font-bold text-white mb-1.5">{p.title}</h3>
               <p className="text-xs text-[#8892a4] leading-relaxed">{p.desc}</p>
             </div>
           ))}
