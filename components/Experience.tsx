@@ -11,7 +11,7 @@ const roles = [
       'Delivered end-to-end Spring Batch reconciliation over Kafka, matching daily repayment event counts against Fineract SOR totals via COB events to detect silent data loss and guarantee per-product data integrity.',
       'Engineered idempotent request handling with fingerprinting, audit-trail replay, and automated failure recovery, eliminating duplicate-payment incidents across distributed repayment services.',
       'Shipped real-time data pipeline enriching 500K+ repayment events with risk signals to power fraud detection and trigger automated payment holds via REST APIs, improving model recall by ~15%.',
-      'Owned on-call rotation, ran canary deployments via Harness with Docker, monitored with Datadog and Splunk, and root-caused live incidents using BigQuery to ship fixes across multiple repayment services',
+      'Owned on-call rotation, ran canary deployments via Harness with Docker, monitored with Datadog and Splunk, and root-caused live incidents using BigQuery to ship fixes across multiple repayment services.',
     ],
     tags: ['Java', 'Spring Boot', 'Oracle', 'Spring Batch', 'Kafka', 'Microservices'],
   },
@@ -36,7 +36,7 @@ const roles = [
     tags: ['Next.js', 'TypeScript', 'GraphQL', 'Spring Boot', 'Spring Security', 'AWS', 'Docker', 'PostgreSQL'],
   },
   {
-    company: 'Logicon Technosolutions', url: 'https://www.logicontech.com/', title: 'Software Engineer', location: 'Pune, India', period: 'June 2019 - Jul 2021',
+    company: 'Logicon Technosolutions', url: 'https://www.logicontech.com/', title: 'Software Engineer', location: 'Pune, India', period: 'May 2020 - Jul 2021',
     bullets: [
       'Developed responsive frontends in React, HTML, and CSS with reusable component libraries, delivering role-based portal experiences for 200+ business users.',
       'Implemented Node.js and Express.js REST services, owning service-layer logic, schema migrations, and end-to-end production support.',
